@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(PlayerMotor))]
 public class playermoves : MonoBehaviour
 {
-    public float speed = 40f;
+    
     private Rigidbody2D body;
     public Transform isgrounded;
     public Transform cellingcheck;
@@ -13,25 +13,31 @@ public class playermoves : MonoBehaviour
     private bool isruning = false;
     private bool isGrounded = true;
     private bool isjumping = false;
-    private float x = 0;
-    private float y = 0;
     private float cayotyTime = 0;
     private bool candashagain = true;
-    private void Awake()
+    private PlayerMotor motor;
+    private void Start()
     {
-        body = GetComponent<Rigidbody2D>();
+        motor = GetComponent<PlayerMotor>();
+        
     }
     // Start is called before the first frame update
     void Update()
     {
-        x = Input.GetAxisRaw("Horizontal");
-        y = Input.GetAxisRaw("Vertical");
+        // prend la valeur des axe x et y
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+        
+        //prend la velocité
+        Vector2 velocity = new Vector2( x , y);
+        
+        //aplique la vélocité à payermotor
+        motor.RunAndJump(velocity);
+        
+       
 
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
-        body.velocity = new Vector2 (x * speed, body.velocity.y);
-    }
+    
 }

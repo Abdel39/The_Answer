@@ -926,6 +926,7 @@ GameObject:
   - component: {fileID: 1094478740}
   - component: {fileID: 1094478739}
   - component: {fileID: 1094478745}
+  - component: {fileID: 1094478746}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -948,7 +949,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1084,9 +1085,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e85ba25a28180418e0ad511e682fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
   isgrounded: {fileID: 1693465490}
   cellingcheck: {fileID: 53353431}
+--- !u!114 &1094478746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094478738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35fd5cc19d0dbcb4997a89c11f4d9933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 350
 --- !u!1 &1693465489
 GameObject:
   m_ObjectHideFlags: 0
