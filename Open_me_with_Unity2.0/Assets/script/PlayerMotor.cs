@@ -18,11 +18,16 @@ public class PlayerMotor : MonoBehaviour
     //vitesse max
     [SerializeField] private float maxSpeed;
     
+    //vitesse reel
+    [SerializeField] private float Speed;
+    
     
     void Start()
     {
         velocity = Vector2.zero;
         rb = GetComponent<Rigidbody2D>();
+        
+        
     }
 
     // Update is called once per frame
@@ -38,6 +43,21 @@ public class PlayerMotor : MonoBehaviour
 
     private void PerformRunAndJump()
     {
-     rb.velocity = new Vector2(velocity.x * maxSpeed * Time.deltaTime , rb.velocity.y);
+        if (Speed<maxSpeed)
+        {
+            
+            rb.velocity = new Vector2(velocity.x * Speed * Time.deltaTime , rb.velocity.y);
+            Speed = Speed + 3;
+            
+        }
+        else
+        {
+            rb.velocity = new Vector2(velocity.x * maxSpeed * Time.deltaTime , rb.velocity.y);
+        }
+        if (velocity.x==0)
+        {
+            Speed = 250;
+        }
+     
     }
 }
