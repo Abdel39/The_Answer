@@ -29,6 +29,7 @@ public class PlayerMotor : MonoBehaviour
     void FixedUpdate()
     {
         PerformRunAndJump();
+        
     }
 
     public void RunAndJump(Vector2 _velocity)
