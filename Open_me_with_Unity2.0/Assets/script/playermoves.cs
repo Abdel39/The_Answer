@@ -6,15 +6,13 @@ public class playermoves : MonoBehaviour
 {
     
     private Rigidbody2D body;
-    public Transform isgrounded;
-    public Transform cellingcheck;
     private bool isfacingright = true;
     private bool hasSpear = false;
     private bool isruning = false;
     private bool isGrounded = true;
-    private bool isjumping = false;
-    private float cayotyTime = 0;
-    private bool candashagain = true;
+    public bool jumpmemory = false;
+    public float jumpclock = 0;
+    private float dash = 0;
     private PlayerMotor motor;
     private void Start()
     {
@@ -28,11 +26,34 @@ public class playermoves : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         
+        // clocks du saut et du dash
+        if (jumpmemory)
+        {
+	        jumpclock -= Time.deltaTime;
+        }
+        else
+        {
+	        jumpclock = 0f;
+        }
+        if (jumpclock > 0)
+        {
+	        jumpmemory =false;
+        }
+        dash-= Time.deltaTime;
+	    if (Input.GetButtonDown("Jump"))
+	    {
+		    jumpmemory = true;
+		    jumpclock = 0.2f;
+	    }
+	    if (Input.GetButtonUp("dash"))
+	    {
+		    dash = 0.2f;
+	    }
         //prend la velocité
         Vector2 velocity = new Vector2( x , y);
         
         //aplique la vélocité à payermotor
-        motor.RunAndJump(velocity);
+        motor.RunAndJump(velocity,jumpmemory,dash);
         
        
 
