@@ -69,4 +69,14 @@ public class cochonscript : MonoBehaviour
         Vector3 move = new Vector3(fastx, fasty, 0);
         cochon.velocity = move;
     }
+
+    public void TakeDamage(int damage)
+    {
+        life = life - damage;
+        Debug.Log("damage TAKEN");
+    }
+    
+    
+    
+    
 }
