@@ -891,7 +891,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d2f7e78ea8cbb1544ba05db35406910c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e53ad11ee29518f4fb2af61718b9da98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -911,7 +911,7 @@ Transform:
   m_GameObject: {fileID: 600119565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.83, y: 4.83, z: -0.26308984}
-  m_LocalScale: {x: 0.19, y: 0.19, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -943,8 +943,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 7.050001, y: 7.030001}
+  m_Offset: {x: -0.03, y: 0}
+  m_Size: {x: 0.15, y: 0.18}
   m_Direction: 0
 --- !u!50 &600119570
 Rigidbody2D:
@@ -1184,8 +1184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: 152}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -339.58, y: 202.6}
+  m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &767783210
 MonoBehaviour:
@@ -1234,6 +1234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6134cbcea04cf654bb230e0c1fd2800c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _imageTest: {fileID: 767783210}
+  _sprite1Life: {fileID: 21300000, guid: 19ef3e17df008c7438d4474fc0a979d3, type: 3}
+  _sprite2Lives: {fileID: 21300000, guid: 7bd59ae93496fe4439320b1b95970733, type: 3}
+  _sprite3Lives: {fileID: 21300000, guid: a1fb60dcd250cac428b23de036c5328b, type: 3}
 --- !u!1 &1080144867
 GameObject:
   m_ObjectHideFlags: 0
