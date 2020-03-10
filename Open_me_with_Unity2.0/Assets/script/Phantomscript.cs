@@ -48,7 +48,7 @@ public class Phantomscript : MonoBehaviour
         }
         else if (positionperso.x < position.x)
         {
-            fastx = -4;
+            fastx = -7;
             if (!retourner)
             {
                 phantom.transform.Rotate(rotat);
@@ -57,7 +57,7 @@ public class Phantomscript : MonoBehaviour
         }
         else
         {
-            fastx = 4;
+            fastx = 7;
             if (retourner)
             {
                 phantom.transform.Rotate(rotat);

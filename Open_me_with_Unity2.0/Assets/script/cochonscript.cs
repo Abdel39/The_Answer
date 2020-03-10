@@ -80,7 +80,7 @@ public class cochonscript : MonoBehaviour
         //    fasty = 1;
         //}
         
-        Vector3 move = new Vector3(fastx, fasty, 0);
+        Vector3 move = new Vector3(fastx, cochon.velocity.y, 0);
         cochon.velocity = move;
         
     }
