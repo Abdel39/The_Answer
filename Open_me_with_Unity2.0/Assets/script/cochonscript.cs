@@ -34,8 +34,8 @@ public class cochonscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (hp <= 0)
+
+        if (false)
         {
             Destroy(GameObject.Find(this.name));
         }

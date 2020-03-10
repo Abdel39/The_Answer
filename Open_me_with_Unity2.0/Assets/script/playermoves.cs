@@ -105,7 +105,7 @@ public class playermoves : MonoBehaviour
                     Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(AttackPos.position,AttackRange,WhatIsEnemies);
                     for (int i = 0; i < enemiesToDamage.Length; i++)
                     {
-                        enemiesToDamage[i].GetComponent<cochonscript>().TakeDamage(damage);
+                        enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
                     }
                 }
                 else
@@ -113,7 +113,7 @@ public class playermoves : MonoBehaviour
                     Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(AttackPosL.position,AttackRange,WhatIsEnemies);
                     for (int i = 0; i < enemiesToDamage.Length; i++)
                     {
-                        enemiesToDamage[i].GetComponent<cochonscript>().TakeDamage(damage);
+                        enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
                     }
                 }
             
@@ -128,14 +128,16 @@ public class playermoves : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        Vector2 velocity = new Vector2(x, y);
-        //aplique la vélocité à payermotor
-        motor.RunAndJump(velocity,jumpclock>0,dash);
         if (isattaking)
         {
             
             Attack();
+        }
+        else
+        {
+            Vector2 velocity = new Vector2(x, y);
+            //aplique la vélocité à payermotor
+            motor.RunAndJump(velocity,jumpclock>0,dash);
         }
         
     }

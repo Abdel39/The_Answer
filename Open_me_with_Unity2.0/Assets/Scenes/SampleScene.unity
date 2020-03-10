@@ -546,6 +546,7 @@ GameObject:
   - component: {fileID: 364410504}
   - component: {fileID: 364410508}
   - component: {fileID: 364410507}
+  - component: {fileID: 364410509}
   m_Layer: 8
   m_Name: cochon
   m_TagString: Untagged
@@ -666,6 +667,20 @@ CapsuleCollider2D:
   m_Offset: {x: -0.007771093, y: -0.042748027}
   m_Size: {x: 0.37852678, y: 0.2843438}
   m_Direction: 1
+--- !u!114 &364410509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364410503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630dd256abfae694abf3dea97e070127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  hurtbox: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +776,8 @@ GameObject:
   - component: {fileID: 600119570}
   - component: {fileID: 600119569}
   - component: {fileID: 600119568}
-  m_Layer: 0
+  - component: {fileID: 600119571}
+  m_Layer: 8
   m_Name: Phantom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,6 +897,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &600119571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600119565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630dd256abfae694abf3dea97e070127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  hurtbox: {fileID: 0}
 --- !u!1 &628964504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1368,7 @@ MonoBehaviour:
     m_Bits: 256
   damage: 2
   isattaking: 0
-  attacktime: 1
+  attacktime: 0.1
   attacktimed: 0
   Animator: {fileID: 1094478747}
 --- !u!114 &1094478746
@@ -1462,6 +1492,7 @@ GameObject:
   - component: {fileID: 1614384969}
   - component: {fileID: 1614384968}
   - component: {fileID: 1614384967}
+  - component: {fileID: 1614384972}
   m_Layer: 8
   m_Name: cochon (1)
   m_TagString: Untagged
@@ -1582,6 +1613,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1614384972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614384966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630dd256abfae694abf3dea97e070127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  hurtbox: {fileID: 0}
 --- !u!1 &1623961285
 GameObject:
   m_ObjectHideFlags: 0

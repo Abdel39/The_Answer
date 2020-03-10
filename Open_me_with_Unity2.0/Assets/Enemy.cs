@@ -6,8 +6,6 @@ public class Enemy : MonoBehaviour
 {
     public int hp;
 
-    public int dammege;
-
     private bool IsAlive = true;
 
     public Transform hurtbox;
@@ -20,15 +18,21 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!IsAlive)
+        {
+            Destroy(GameObject.Find(this.name));
+        }
     }
 
-    public void TakeDammage(int dammage)
+    public void TakeDamage(int dammage)
     {
         hp = -dammage;
         if (hp < 0)
         {
             IsAlive = false;
         }
+
+        Debug.Log("ouch"+name);
     }
     
 }
