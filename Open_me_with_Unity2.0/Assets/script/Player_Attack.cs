@@ -19,15 +19,14 @@ public class Player_Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+            
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
-        
+
+
         if (Time_Between_Attack<=0)
         {
             //you can attack
@@ -45,7 +44,7 @@ public class Player_Attack : MonoBehaviour
 
                    for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                     enemiesToDamage[i].GetComponent<cochonscript>().TakeDamage(damage);
+                    enemiesToDamage[i].GetComponent<cochonscript>().TakeDamage(damage);
                 }
             }
             

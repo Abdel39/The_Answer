@@ -6,7 +6,7 @@ using UnityEngine.WSA;
 public class cochonscript : MonoBehaviour
 {
     // la vie du cochon
-    private int life = 2;
+    private int hp = 2;
     
     private Vector2 velocity;
     
@@ -14,8 +14,11 @@ public class cochonscript : MonoBehaviour
     private Rigidbody2D cochon;
     
     
-    public float fastx;
-    public float fasty;
+    private float fastx;
+    private float fasty;
+
+    private Vector3 rotat = new Vector3(0, 180,0);
+    private bool retourner = true;
     
     public Vector3 position;
     public Vector3 positionperso;
@@ -31,15 +34,16 @@ public class cochonscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life <= 0)
+        
+        if (hp <= 0)
         {
-            Destroy(GameObject.Find("cochon"));
+            Destroy(GameObject.Find(this.name));
         }
-        
+
         velocity = Vector2.zero;
-        position = GameObject.Find("cochon").transform.position;
+        position = cochon.transform.position;
         positionperso = GameObject.Find("character").transform.position;
-        
+
         if (positionperso.x - 1.8 < position.x && positionperso.x + 1.8 > position.x)
         {
             fastx = 0;
@@ -47,10 +51,20 @@ public class cochonscript : MonoBehaviour
         else if (positionperso.x < position.x)
         {
             fastx = -4;
+            if (!retourner)
+            {
+                cochon.transform.Rotate(rotat);
+                retourner = true;
+            }
         }
         else
         {
             fastx = 4;
+            if (retourner)
+            {
+                cochon.transform.Rotate(rotat);
+                retourner = false;
+            }
         }
         
         //if (positionperso.y - 0.5 < position.y && positionperso.y + 0.5 > position.y)
@@ -72,7 +86,7 @@ public class cochonscript : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        life = life - damage;
+        hp = hp - damage;
         Debug.Log("damage TAKEN");
     }
     
