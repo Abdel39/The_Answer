@@ -10,6 +10,7 @@ public class Player_Attack : MonoBehaviour
     public float Start_Between_Attack;
 
      public Transform AttackPos;
+     public Transform AttackPosL;
      public float AttackRange;
     public LayerMask WhatIsEnemies;
     public int damage;
@@ -23,7 +24,7 @@ public class Player_Attack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Attack()
     {
 
 
