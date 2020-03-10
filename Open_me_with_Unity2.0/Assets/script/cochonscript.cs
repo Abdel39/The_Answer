@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using script;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.WSA;
 public class cochonscript : MonoBehaviour
 {
+   
     // la vie du cochon
-    private int life = 2;
+    public static int life=2 ;
+    public static int damage=2 ;
+
+    
+    Cochon myCochon = new Cochon(life, damage);
     
     private Vector2 velocity;
     
@@ -14,11 +20,11 @@ public class cochonscript : MonoBehaviour
     private Rigidbody2D cochon;
     
     
-    public float fastx;
-    public float fasty;
+    private float fastx;
+    private float fasty;
     
-    public Vector3 position;
-    public Vector3 positionperso;
+    private Vector3 position;
+    private Vector3 positionperso;
     
     // Start is called before the first frame update
     void Start()
@@ -31,11 +37,6 @@ public class cochonscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life <= 0)
-        {
-            Destroy(GameObject.Find("cochon"));
-        }
-        
         velocity = Vector2.zero;
         position = GameObject.Find("cochon").transform.position;
         positionperso = GameObject.Find("character").transform.position;
@@ -53,27 +54,19 @@ public class cochonscript : MonoBehaviour
             fastx = 4;
         }
         
-        //if (positionperso.y - 0.5 < position.y && positionperso.y + 0.5 > position.y)
-        //{
-        //    fasty = 0;
-        //}
-        //else if (positionperso.y < position.y)
-        //{
-        //    fasty = -1;
-        //}
-        //else
-        //{
-        //    fasty = 1;
-        //}
-        
+       
         Vector3 move = new Vector3(fastx, fasty, 0);
         cochon.velocity = move;
     }
 
     public void TakeDamage(int damage)
     {
-        life = life - damage;
-        Debug.Log("damage TAKEN");
+        myCochon.takeDamage(damage);
+    }
+
+    public void attack(Entity entity)
+    {
+        entity.takeDamage(myCochon.damage);
     }
     
     

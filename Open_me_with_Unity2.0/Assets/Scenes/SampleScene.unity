@@ -486,10 +486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e329b231874192548981296b89f0ec73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fastx: 0
-  fasty: 0
-  position: {x: 0, y: 0, z: 0}
-  positionperso: {x: 0, y: 0, z: 0}
 --- !u!70 &364410508
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
