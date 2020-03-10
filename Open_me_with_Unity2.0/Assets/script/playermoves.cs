@@ -2,9 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 [RequireComponent(typeof(PlayerMotor))]
 public class playermoves : MonoBehaviour
 {
+    private int lifePoint = 3;
+    private int invincibility = 30;
     
     private Rigidbody2D body;
     private bool isfacingright = true;
@@ -28,29 +32,33 @@ public class playermoves : MonoBehaviour
     public float attacktime;
     public float attacktimed;
     public Animator Animator;
+
     private void Start()
     {
         motor = GetComponent<PlayerMotor>();
-        
     }
+
     // Start is called before the first frame update
     void Update()
     {
+        invincibility--;
+
         // prend la valeur des axe x et y
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
         if (x > 0)
         {
             isfacingright = true;
-            Animator.SetBool("is facing right",true);
+            Animator.SetBool("is facing right", true);
         }
         else if (x < 0)
         {
             isfacingright = false;
-            Animator.SetBool("is facing right",false);
+            Animator.SetBool("is facing right", false);
         }
+
         dash -= Time.deltaTime;
-        if (Input.GetAxisRaw("Jump")>0)
+        if (Input.GetAxisRaw("Jump") > 0)
         {
             jumpclock = 0.2f;
         }
@@ -68,56 +76,56 @@ public class playermoves : MonoBehaviour
         {
             isattaking = true;
             attacktimed = attacktime;
-            Animator.SetBool("is attacking",true);
+            Animator.SetBool("is attacking", true);
         }
 
-        if (attacktimed>0)
+        if (attacktimed > 0)
         {
             attacktimed -= Time.deltaTime;
         }
         else
         {
             isattaking = false;
-            
-            Animator.SetBool("is attacking",false);
+
+            Animator.SetBool("is attacking", false);
         }
+
         //prend la velocité
         Vector2 velocity = new Vector2(x, y);
     }
+
     public void Attack()
     {
-
-
-        if (Time_Between_Attack<=0)
+        if (Time_Between_Attack <= 0)
         {
             //you can attack
-          
-                
-                
-                // Annimation
-                // Animator.SetTrigger("Attack");
-               
-               
-               
-                // Zone de dommage
-                if (isfacingright)
+
+
+            // Annimation
+            // Animator.SetTrigger("Attack");
+
+
+            // Zone de dommage
+            if (isfacingright)
+            {
+                Collider2D[] enemiesToDamage =
+                    Physics2D.OverlapCircleAll(AttackPos.position, AttackRange, WhatIsEnemies);
+                for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(AttackPos.position,AttackRange,WhatIsEnemies);
-                    for (int i = 0; i < enemiesToDamage.Length; i++)
-                    {
-                        enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
-                    }
+                    enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
                 }
-                else
+            }
+            else
+            {
+                Collider2D[] enemiesToDamage =
+                    Physics2D.OverlapCircleAll(AttackPosL.position, AttackRange, WhatIsEnemies);
+                for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(AttackPosL.position,AttackRange,WhatIsEnemies);
-                    for (int i = 0; i < enemiesToDamage.Length; i++)
-                    {
-                        enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
-                    }
+                    enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
                 }
-            
-            
+            }
+
+
             Time_Between_Attack = Start_Between_Attack;
         }
         else
@@ -130,18 +138,52 @@ public class playermoves : MonoBehaviour
     {
         if (isattaking)
         {
-            
             Attack();
         }
         else
         {
             Vector2 velocity = new Vector2(x, y);
             //aplique la vélocité à payermotor
-            motor.RunAndJump(velocity,jumpclock>0,dash);
+            motor.RunAndJump(velocity, jumpclock > 0, dash);
         }
+    }
+
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Enemy enemy = other.collider.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            TakeDamage(1);
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (invincibility < 0)
+        {
+            lifePoint -= damage;
+            if (lifePoint <= 0)
+            {
+                lifePoint = 0;
+                die();
+            }
+
+            showLife();
+            invincibility = 30;
+        }
+    }
+
+    public void showLife()
+    {
+        LifeImage.UpdateHeartImage(lifePoint);
+    }
+
+    public void die()
+    {
+        SceneManager.LoadScene("GameOver");
         
     }
 
     // Update is called once per frame
-    
 }
