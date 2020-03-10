@@ -31,7 +31,7 @@ public class Player_Attack : MonoBehaviour
         if (Time_Between_Attack<=0)
         {
             //you can attack
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetButtonDown("Fire2"))
             {
                 
                 

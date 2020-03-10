@@ -11,7 +11,7 @@ public class playermoves : MonoBehaviour
     private int invincibility = 30;
     
     private Rigidbody2D body;
-    private bool isfacingright = true;
+    public bool isfacingright = true;
     private bool hasSpear = false;
     private bool isruning = false;
     private bool isGrounded = true;
