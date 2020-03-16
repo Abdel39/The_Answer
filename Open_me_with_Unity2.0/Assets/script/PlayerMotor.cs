@@ -10,7 +10,7 @@ public class PlayerMotor : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private Vector2 velocity;
+    public Vector2 velocity;
     public bool input_jump;
     private bool input_dash;
     public float jumpTime;
@@ -20,6 +20,7 @@ public class PlayerMotor : MonoBehaviour
     
     //vitesse max
     [SerializeField] private float maxSpeed;
+    [SerializeField] private float Speed;
     [SerializeField] private float jumpstrenght;
     [SerializeField] private float dashstrength;
     public bool isgrounded=false;
@@ -28,6 +29,8 @@ public class PlayerMotor : MonoBehaviour
     public float fallingspeed = 1.1f;
     public float jumpingTime;
     public bool isjumping;
+    
+    public bool isfacingright = true;
     
     void Start()
     {
@@ -49,11 +52,28 @@ public class PlayerMotor : MonoBehaviour
             }
 
             PerformRunAndJump();
+          
             if (input_dash)
             {
                 Dash();
             }
+            
+           
+            
     }
+    
+    private void Flip()
+    {
+        isfacingright = !isfacingright;
+        transform.Rotate(0f, 180f, 0f);
+       
+
+    }
+    
+    
+    
+    
+    
 
     public void RunAndJump(Vector2 _velocity,bool jumpmemory,float dash)
     {
@@ -67,7 +87,7 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
-    private void PerformRunAndJump()
+    public void PerformRunAndJump()
     {
         if (input_jump && isjumping && jumptimecounter > 0)
         {
@@ -78,16 +98,48 @@ public class PlayerMotor : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(velocity.x * maxSpeed * Time.deltaTime, rb.velocity.y);
-            isjumping = false;
+            if (Speed>maxSpeed)
+            {
+                rb.velocity = new Vector2(velocity.x * maxSpeed * Time.fixedDeltaTime, rb.velocity.y);
+                            isjumping = false;
+            }
+            else
+            {
+                rb.velocity = new Vector2(velocity.x * Speed * Time.fixedDeltaTime, rb.velocity.y);
+                isjumping = false;
+
+                Speed = Speed + 100;
+            }
         }
 
+        if (velocity.x == 0)
+        {
+            Speed = 0;
+        }
+
+        
+        
+        
         if (rb.velocity.y < 0)
         {
             rb.AddForce(new Vector2(0, rb.velocity.y * fallingspeed));
         }
         
         if (velocity.y < 0) rb.AddForce(new Vector2(0, -fallingspeed * 50));
+        
+        
+        
+        if ( velocity.x > 0 && !isfacingright)
+        {
+         
+            Flip();
+        }
+        
+        else if ( velocity.x < 0 && isfacingright)
+        {
+           
+            Flip();
+        }
 
 }
 
