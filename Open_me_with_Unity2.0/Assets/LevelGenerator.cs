@@ -26,9 +26,9 @@ public class LevelGenerator : MonoBehaviour {
     {
         Color pixelColor = map.GetPixel(x, y);
 
-        if (pixelColor.a == 0)
+        if (pixelColor.a == 0 || pixelColor.Equals(new Color(255,255,255)))
         {
-            // le pixel est transparent donc on fait rien
+            // le pixel est transparent ou blanc donc on fait rien
             return;
         }
 
