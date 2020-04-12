@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 498}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
-  controlID: 36
+  controlID: 109
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 15
+  controlID: 129
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 348}
   m_MaxSize: {x: 4004, y: 8048}
   vertical: 1
-  controlID: 37
+  controlID: 110
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3a0d0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 56ddfeff1e0effff4841ffff3e5dffff485dffff385fffff7c62ffff228effffeeb5ffffeee9ffff34eaffff7aeaffff34faffff44faffff4efaffff28fbffff32fbffffd8fbffffe03d0000f68500004486000058b80000
+      m_ExpandedIDs: d8fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -601,7 +601,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 02070000
     m_LastClickedID: 1794
-    m_ExpandedIDs: 00000000e8070000bc0a0000f80a0000a80b0000f20b0000f60b0000e40c0000f00c00004c0d0000cc0d0000200e0000582d00005a2d00005c2d00005e2d0000602d0000622d0000642d0000662d0000682d00006a2d00006c2d00006e2d0000702d0000
+    m_ExpandedIDs: 00000000e8070000bc0a0000f80a0000a80b0000f20b0000f60b0000260c0000e40c0000f00c00004c0d0000840d0000cc0d0000200e0000582d00005a2d00005c2d00005e2d0000602d0000622d0000642d0000662d0000682d00006a2d00006c2d00006e2d0000702d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -632,18 +632,18 @@ MonoBehaviour:
     m_ExpandedIDs: ffffffff00000000e8070000bc0a0000f80a0000a80b0000f20b0000f60b0000260c0000e40c0000f00c00004c0d0000840d0000cc0d0000200e0000582d00005a2d00005c2d00005e2d0000602d0000622d0000642d0000662d0000682d00006a2d00006c2d00006e2d0000702d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Spear
-      m_OriginalName: Spear
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 3386
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
