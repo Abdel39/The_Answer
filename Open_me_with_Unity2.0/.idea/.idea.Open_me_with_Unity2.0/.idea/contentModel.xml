@@ -6,7 +6,6 @@
     <e p="C:\Users\sambo\OneDrive\Bureau\The_Answerrep\Open_me_with_Unity2.0" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="LevelGenerator.cs" t="Include" />
         <e p="menu" t="Include">
           <e p="MainMenu.cs" t="Include" />
           <e p="menu_assets" t="Include">
@@ -81,11 +80,13 @@
           </e>
         </e>
         <e p="script" t="Include">
+          <e p="changerLesTouches.cs" t="Include" />
           <e p="check.cs" t="Include" />
           <e p="Cochonscript.cs" t="Include" />
           <e p="ColorToPrefab.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="lel.cs" t="Include" />
+          <e p="LevelGenerator.cs" t="Include" />
           <e p="LifeImage.cs" t="Include" />
           <e p="PauseMenu.cs" t="Include" />
           <e p="Phantomscript.cs" t="Include" />
