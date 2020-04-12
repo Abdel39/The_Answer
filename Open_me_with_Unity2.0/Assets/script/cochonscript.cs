@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.WSA;
 public class cochonscript : MonoBehaviour
 {
     // la vie du cochon
