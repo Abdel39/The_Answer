@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof( playermoves))]
@@ -12,30 +13,46 @@ public class PlayerMotor : MonoBehaviour
 
     public Vector2 velocity;
     public bool input_jump;
-    private bool input_dash;
+    
     public float jumpTime;
     private float jumptimecounter;
     // physique 2D du personnage
     private Rigidbody2D rb;
     
+    
+    
+    //pour dash
+    private int direction;
+    public float dashSpeed;
+    private float dashTime;
+    public float startDashTime;
+    private float moveInput;
+    
+    
     //vitesse max
     [SerializeField] private float maxSpeed;
     [SerializeField] private float Speed;
     [SerializeField] private float jumpstrenght;
-    [SerializeField] private float dashstrength;
     public bool isgrounded=false;
     public float cayotyTime = 0;
-    public bool candashagain = true;
+    
     public float fallingspeed = 1.1f;
     public float jumpingTime;
     public bool isjumping;
-    
     public bool isfacingright = true;
     
     void Start()
     {
         velocity = Vector2.zero;
         rb = GetComponent<Rigidbody2D>();
+        
+        dashTime = startDashTime;
+
+    }
+
+    private void Update()
+    {
+        Dash();
     }
 
     // Update is called once per frame
@@ -44,7 +61,7 @@ public class PlayerMotor : MonoBehaviour
             if (isgrounded)
             {
                 cayotyTime = 0.2f;
-                candashagain = true;
+                
             }
             else
             {
@@ -53,10 +70,7 @@ public class PlayerMotor : MonoBehaviour
 
             PerformRunAndJump();
           
-            if (input_dash)
-            {
-                Dash();
-            }
+           
             
            
             
@@ -69,17 +83,62 @@ public class PlayerMotor : MonoBehaviour
        
 
     }
-    
-    
-    
-    
-    
 
-    public void RunAndJump(Vector2 _velocity,bool jumpmemory,float dash)
+
+    private void Dash()
+    {
+        moveInput = Input.GetAxis("Horizontal");
+        if (direction == 0)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (moveInput< 0)
+                {
+                    direction = 1;
+                    Debug.Log("dir =1" );
+                }
+                else if (moveInput > 0)
+                {
+                    direction = 2;
+                    Debug.Log("dir =2" );
+                }
+            }
+        }
+        else
+        {
+            if(dashTime <= 0)
+            {
+                direction = 0;
+                dashTime = startDashTime;
+                rb.velocity = Vector2.zero;
+            }
+            else
+            {
+                dashTime -= Time.deltaTime;
+
+                if(direction == 1)
+                {
+                    rb.AddForce(Vector2.left * dashSpeed);
+                    
+                }
+                else if (direction == 2)
+                {
+                    
+                    rb.AddForce(Vector2.right * dashSpeed);
+                }
+            }
+        }
+    }
+
+
+
+
+
+    public void RunAndJump(Vector2 _velocity,bool jumpmemory)
     {
         velocity = _velocity;
         input_jump = jumpmemory;
-        input_dash = dash > 0;
+        
         if (input_jump && (isgrounded||cayotyTime>0))
         {
             isjumping = true;
@@ -140,18 +199,12 @@ public class PlayerMotor : MonoBehaviour
            
             Flip();
         }
+        
+        
 
 }
 
-    private void Dash()
-    {
-        if (candashagain)
-        {
-            rb.velocity= new Vector2(0,0);
-            rb.AddForce(new Vector2(velocity.x*dashstrength,velocity.y*dashstrength));
-            candashagain = false;
-        }
-    }
+    
 
 
 }

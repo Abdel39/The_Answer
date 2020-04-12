@@ -11,17 +11,19 @@ public class Spear : MonoBehaviour
     public Rigidbody2D body;
     private bool dir;
     private int dammage = 5;
-
+    public float Times;
+    public float startTime;
 
 
 
 
     void Start()
     {
-      
+        Times = startTime;
         body.velocity = transform.right * SpeedSpear;
     }
 
+    
 
 
     void OnTriggerEnter2D(Collider2D info)
@@ -30,8 +32,19 @@ public class Spear : MonoBehaviour
         if (enemy!=null)
         {
             enemy.TakeDamage(dammage);
+          //  Destroy(gameObject);
+        }
+        else
+        {
+            body.velocity = Vector2.zero;
+            
+            
+            Debug.Log("stylé");
+            
         }
         Debug.Log(info);
-        Destroy(gameObject);
+        
+      
+       
     }
 }
