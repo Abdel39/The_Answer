@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int hp;
+    public int hp =10;
 
     private bool IsAlive = true;
 
@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(hp+name);
     }
 
     // Update is called once per frame
@@ -26,7 +26,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int dammage)
     {
-        hp = -dammage;
+        hp = hp -dammage;
+        
         if (hp < 0)
         {
             IsAlive = false;

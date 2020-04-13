@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Spear : MonoBehaviour
@@ -10,7 +11,7 @@ public class Spear : MonoBehaviour
     public float SpeedSpear;
     public Rigidbody2D body;
     private bool dir;
-    private int dammage = 5;
+    private int dammage = 1;
     public float Times;
     public float startTime;
 
@@ -32,17 +33,19 @@ public class Spear : MonoBehaviour
         if (enemy!=null)
         {
             enemy.TakeDamage(dammage);
+            
           //  Destroy(gameObject);
         }
         else
         {
             body.velocity = Vector2.zero;
-            
-            
-            Debug.Log("stylé");
-            
+            body.gravityScale = 0;
+            body.tag = "IsGround";
+            body.mass = 10000000000;
+
+
         }
-        Debug.Log(info);
+        
         
       
        

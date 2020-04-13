@@ -94,11 +94,9 @@
           <e p="PlayerMotor.cs" t="Include" />
           <e p="playermoves.cs" t="Include" />
           <e p="settingMenu.cs" t="Include" />
+          <e p="Spear.cs" t="Include" />
           <e p="startMenuScene.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
-        </e>
-        <e p="Spear" t="Include">
-          <e p="Spear.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

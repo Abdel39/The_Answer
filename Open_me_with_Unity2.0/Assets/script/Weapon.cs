@@ -14,11 +14,11 @@ public class Weapon : MonoBehaviour
     public Transform FirePoint;
 
     public GameObject SpearSpawn;
-
+    
     private bool Istouch = false;
-    // Update is called once per frame
+    private Collider2D test;
     public bool HaveSpear;
-    public float Times ;
+    
     void Update()
     {
 
@@ -36,25 +36,16 @@ public class Weapon : MonoBehaviour
 
         }
 
-
-        if (Input.GetKeyDown(KeyCode.R))
+        if (test!=null)
         {
-            
-            
-            Times = 1;
+            if (Input.GetKeyDown(KeyCode.R) && Istouch)
+                    {
+                        Destroy(test.gameObject);
+                        HaveSpear = true;
+                    }
         }
 
         
-        if (Times>0)
-        {
-            Times = Times - Time.deltaTime;
-            Istouch = true;
-        }
-        else
-        {
-            Istouch = false;
-        }
-
 
     }
 
@@ -66,8 +57,9 @@ public class Weapon : MonoBehaviour
         Spear spear = info.GetComponent<Spear>();
         if (spear!=null)
         {
-            Destroy(info.gameObject);
-            HaveSpear = true;
+            Istouch = true;
+            test = info;
+            
         }
         
         Debug.Log(info);

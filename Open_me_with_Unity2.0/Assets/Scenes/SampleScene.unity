@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630dd256abfae694abf3dea97e070127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 5
   hurtbox: {fileID: 0}
 --- !u!1 &628964504
 GameObject:
@@ -1701,7 +1701,6 @@ MonoBehaviour:
   SpearSpawn: {fileID: 442871637006558507, guid: 63fcff6a6c1212047aca54ddc0724b42,
     type: 3}
   HaveSpear: 1
-  Times: 0
 --- !u!114 &1094478749
 MonoBehaviour:
   m_ObjectHideFlags: 0
