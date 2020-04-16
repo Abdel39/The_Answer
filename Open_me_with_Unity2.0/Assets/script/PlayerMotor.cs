@@ -42,6 +42,10 @@ public class PlayerMotor : MonoBehaviour
     public bool isjumping;
     public bool isfacingright = true;
     
+    
+    //animation
+    public Animator animator;
+    
     void Start()
     {
         velocity = Vector2.zero;
@@ -53,6 +57,10 @@ public class PlayerMotor : MonoBehaviour
 
     private void Update()
     {
+        animator.SetFloat("Speed", Speed);
+        
+        animator.SetBool("IsJumping",!isgrounded);
+        
         Dash();
     }
 
@@ -125,13 +133,14 @@ public class PlayerMotor : MonoBehaviour
 
                 if(direction == 1)
                 {
+                    animator.SetTrigger("Dash");
                     rb.AddForce(Vector2.left * dashSpeed);
                     candash = false;
                     
                 }
                 else if (direction == 2)
                 {
-                    
+                    animator.SetTrigger("Dash");
                     rb.AddForce(Vector2.right * dashSpeed);
                     candash = false;
                 }
@@ -150,6 +159,7 @@ public class PlayerMotor : MonoBehaviour
         
         if (input_jump && (isgrounded||cayotyTime>0))
         {
+            
             isjumping = true;
             jumptimecounter = jumpTime;
         }

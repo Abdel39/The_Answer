@@ -1666,6 +1666,7 @@ MonoBehaviour:
   jumpingTime: 0
   isjumping: 0
   isfacingright: 1
+  animator: {fileID: 1094478747}
 --- !u!95 &1094478747
 Animator:
   serializedVersion: 3
