@@ -42,7 +42,8 @@ public class Player_Attack : MonoBehaviour
 
                     for (int i = 0; i < enemiesToDamage.Length; i++)
                     {
-                        enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
+                        bool n = enemiesToDamage[i].GetComponent<Mars_bihavior>().isinvulnerable;
+                        enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage, n);
                     }
                 }
             

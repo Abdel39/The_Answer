@@ -13,15 +13,15 @@ public class PlayerMotor : MonoBehaviour
     public Vector2 velocity;
     public bool input_jump;
     private bool input_dash;
-    public float jumpTime;
+    public float jumpTime=(float)0.8;
     private float jumptimecounter;
     // physique 2D du personnage
     private Rigidbody2D rb;
     
     //vitesse max
-    [SerializeField] private float maxSpeed;
-    [SerializeField] private float Speed;
-    [SerializeField] private float jumpstrenght;
+    [SerializeField] private float maxSpeed=500;
+    [SerializeField] private float Speed=300;
+    [SerializeField] private float jumpstrenght=20;
     [SerializeField] private float dashstrength;
     public bool isgrounded=false;
     public float cayotyTime = 0;
@@ -31,6 +31,7 @@ public class PlayerMotor : MonoBehaviour
     public bool isjumping;
     
     public bool isfacingright = true;
+    public Animator animator;
     
     void Start()
     {
@@ -115,6 +116,11 @@ public class PlayerMotor : MonoBehaviour
         if (velocity.x == 0)
         {
             Speed = 0;
+            animator.SetBool("run",false);
+        }
+        else
+        {
+            animator.SetBool("run",true);
         }
 
         

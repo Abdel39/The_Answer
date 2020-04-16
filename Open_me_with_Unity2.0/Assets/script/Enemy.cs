@@ -24,8 +24,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int dammage)
+    public void TakeDamage(int dammage, bool invincible=false)
     {
+        if (invincible)
+            return;
         hp = -dammage;
         if (hp < 0)
         {
