@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     {
         hp = hp -dammage;
         
-        if (hp < 0)
+        if (hp <= 0)
         {
             IsAlive = false;
         }

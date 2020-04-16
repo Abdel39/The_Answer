@@ -27,6 +27,7 @@ public class PlayerMotor : MonoBehaviour
     private float dashTime;
     public float startDashTime;
     private float moveInput;
+    private bool candash;
     
     
     //vitesse max
@@ -60,6 +61,7 @@ public class PlayerMotor : MonoBehaviour
     {
             if (isgrounded)
             {
+                candash = true;
                 cayotyTime = 0.2f;
                 
             }
@@ -90,19 +92,24 @@ public class PlayerMotor : MonoBehaviour
         moveInput = Input.GetAxis("Horizontal");
         if (direction == 0)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (candash)
             {
-                if (moveInput< 0)
+                
+                if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
-                    direction = 1;
-                    Debug.Log("dir =1" );
-                }
-                else if (moveInput > 0)
-                {
-                    direction = 2;
-                    Debug.Log("dir =2" );
+                                if (moveInput< 0)
+                                {
+                                    direction = 1;
+                                    Debug.Log("dir =1" );
+                                }
+                                else if (moveInput > 0)
+                                {
+                                    direction = 2;
+                                    Debug.Log("dir =2" );
+                                }
                 }
             }
+            
         }
         else
         {
@@ -119,12 +126,14 @@ public class PlayerMotor : MonoBehaviour
                 if(direction == 1)
                 {
                     rb.AddForce(Vector2.left * dashSpeed);
+                    candash = false;
                     
                 }
                 else if (direction == 2)
                 {
                     
                     rb.AddForce(Vector2.right * dashSpeed);
+                    candash = false;
                 }
             }
         }
@@ -205,6 +214,4 @@ public class PlayerMotor : MonoBehaviour
 }
 
     
-
-
 }

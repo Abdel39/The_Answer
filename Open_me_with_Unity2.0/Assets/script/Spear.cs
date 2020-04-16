@@ -30,6 +30,7 @@ public class Spear : MonoBehaviour
     void OnTriggerEnter2D(Collider2D info)
     {
         Enemy enemy = info.GetComponent<Enemy>();
+        Debug.Log("boom");
         if (enemy!=null)
         {
             enemy.TakeDamage(dammage);
@@ -42,6 +43,7 @@ public class Spear : MonoBehaviour
             body.gravityScale = 0;
             body.tag = "IsGround";
             body.mass = 10000000000;
+            dammage = 0;
 
 
         }
