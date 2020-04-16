@@ -14,25 +14,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Speed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsJumping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Dash
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -381,9 +381,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Attack
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsJumping
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102444536896478900}
   m_Solo: 0
@@ -576,19 +573,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102213744345992856}
-    m_Position: {x: 24, y: -12, z: 0}
+    m_Position: {x: -228, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102444536896478900}
-    m_Position: {x: 396, y: -324, z: 0}
+    m_Position: {x: 372, y: -444, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102017075239893178}
-    m_Position: {x: 396, y: 108, z: 0}
+    m_Position: {x: 372, y: 204, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102510952175250984}
-    m_Position: {x: 24, y: 108, z: 0}
+    m_Position: {x: -228, y: 204, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102974884109183126}
-    m_Position: {x: 408, y: -96, z: 0}
+    m_Position: {x: 372, y: -60, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101827033844862144}
@@ -597,7 +594,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 756, y: -12, z: 0}
-  m_EntryPosition: {x: 48, y: -144, z: 0}
+  m_EntryPosition: {x: -204, y: -360, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102213744345992856}
