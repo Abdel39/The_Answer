@@ -648,6 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
+  isinvulnerable: 0
   hurtbox: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1011,6 +1012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
+  isinvulnerable: 0
   hurtbox: {fileID: 0}
 --- !u!1 &628964504
 GameObject:
@@ -1830,6 +1832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
+  isinvulnerable: 0
   hurtbox: {fileID: 0}
 --- !u!70 &1332287899
 CapsuleCollider2D:
@@ -1844,8 +1847,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.007771093, y: -0.042748027}
-  m_Size: {x: 0.37852678, y: 0.2843438}
+  m_Offset: {x: 0.009541894, y: -0.0016090168}
+  m_Size: {x: 0.3265894, y: 0.20206676}
   m_Direction: 1
 --- !u!50 &1332287900
 Rigidbody2D:
@@ -1924,7 +1927,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332287897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.58, y: -0.03, z: 11.308594}
+  m_LocalPosition: {x: -4.1, y: -0.03, z: 11.308594}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2186,6 +2189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
+  isinvulnerable: 0
   hurtbox: {fileID: 0}
 --- !u!1 &1623961285
 GameObject:

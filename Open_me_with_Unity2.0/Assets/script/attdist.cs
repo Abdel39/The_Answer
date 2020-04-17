@@ -82,11 +82,11 @@ public class attdist : MonoBehaviour
         {
             if (positionperso.x > position.x)
             {
-                GameObject.Instantiate(eclairprefabe, position  + new Vector3( 01.3f, 0, 0), Quaternion.identity);
+                GameObject.Instantiate(eclairprefabe, position  + new Vector3( 01.5f, 0, 0), Quaternion.identity);
             }
             else
             {
-                GameObject.Instantiate(eclairprefabe, position  + new Vector3( -01.3f, 0, 0), Quaternion.identity);
+                GameObject.Instantiate(eclairprefabe, position  + new Vector3( -01.5f, 0, 0), Quaternion.identity);
             }
             vatirer = false;
         }

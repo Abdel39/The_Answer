@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class élcair : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         xb = rb.position.x;
-        
+
         position = rb.transform.position;
         positionperso = GameObject.Find("character").transform.position;
         
@@ -27,14 +28,19 @@ public class élcair : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
-        Vector3 move = new Vector3(15 * côté, 0, 0);
+        if (rb.IsTouchingLayers())
+        {
+            Destroy(GameObject.Find(this.name));
+        }
+        Vector3 move = new Vector3(15 * côté, 0, 0); 
         rb.velocity = move;
         StartCoroutine(fin());
     }
-
+    
+    
     private IEnumerator fin()
     {
         yield return new WaitForSeconds(1f);
