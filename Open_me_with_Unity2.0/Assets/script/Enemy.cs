@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         if (isinvulnerable)
             return;
         hp = hp -dammage;
-        
+        Debug.Log("yep");
         if (hp <= 0)
         {
             IsAlive = false;

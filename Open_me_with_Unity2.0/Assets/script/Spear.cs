@@ -11,30 +11,33 @@ public class Spear : MonoBehaviour
     public float SpeedSpear;
     public Rigidbody2D body;
     private bool dir;
-    private int dammage = 1;
+    private int dammage = 15;
     public float Times;
     public float startTime;
-    
+    private bool HaveSpace;
 
     void Start()
     {
         Times = startTime;
         body.velocity = transform.right * SpeedSpear;
+        
     }
     
 
     void OnTriggerEnter2D(Collider2D info)
     {
         Enemy enemy = info.GetComponent<Enemy>();
-        Debug.Log("boom");
+        
         if (enemy!=null)
         {
+            
             enemy.TakeDamage(dammage);
             
           //  Destroy(gameObject);
         }
         else
         {
+            
             body.velocity = Vector2.zero;
             body.gravityScale = 0;
             body.tag = "IsGround";
