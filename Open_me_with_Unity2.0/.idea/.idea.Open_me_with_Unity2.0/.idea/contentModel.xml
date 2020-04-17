@@ -80,23 +80,31 @@
           </e>
         </e>
         <e p="Méchant" t="Include">
+          <e p="cochon" t="Include">
+            <e p="cochonscript.cs" t="Include" />
+          </e>
+          <e p="Enemy.cs" t="Include" />
           <e p="nuage" t="Include">
+            <e p="attdist.cs" t="Include" />
             <e p="élcair.cs" t="Include" />
+          </e>
+          <e p="phatom" t="Include">
+            <e p="Phantomscript.cs" t="Include" />
+          </e>
+          <e p="tourelle" t="Include">
+            <e p="ballescript.cs" t="Include" />
+            <e p="tourellescript.cs" t="Include" />
           </e>
         </e>
         <e p="script" t="Include">
-          <e p="attdist.cs" t="Include" />
           <e p="changerLesTouches.cs" t="Include" />
           <e p="check.cs" t="Include" />
-          <e p="cochonscript.cs" t="Include" />
           <e p="ColorToPrefab.cs" t="Include" />
-          <e p="Enemy.cs" t="Include" />
           <e p="lel.cs" t="Include" />
           <e p="LevelGenerator.cs" t="Include" />
           <e p="LifeImage.cs" t="Include" />
           <e p="Mars_bihavior.cs" t="Include" />
           <e p="PauseMenu.cs" t="Include" />
-          <e p="Phantomscript.cs" t="Include" />
           <e p="Player_Attack.cs" t="Include" />
           <e p="PlayerMotor.cs" t="Include" />
           <e p="playermoves.cs" t="Include" />
