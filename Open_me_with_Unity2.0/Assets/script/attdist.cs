@@ -16,8 +16,8 @@ public class attdist : MonoBehaviour
     private Vector3 rotat = new Vector3(0, 180,0);
     private bool retourner = true;
     
-    public Vector3 position;
-    public Vector3 positionperso;
+    private Vector3 position;
+    private Vector3 positionperso;
 
     private bool vatirer = false;
     public GameObject eclairprefabe;
@@ -80,7 +80,14 @@ public class attdist : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (GameObject.Find("éclair(Clone)") == false)
         {
-            GameObject.Instantiate(eclairprefabe, position  + new Vector3( 01.3f, 0, 0), Quaternion.identity);
+            if (positionperso.x > position.x)
+            {
+                GameObject.Instantiate(eclairprefabe, position  + new Vector3( 01.3f, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                GameObject.Instantiate(eclairprefabe, position  + new Vector3( -01.3f, 0, 0), Quaternion.identity);
+            }
             vatirer = false;
         }
     }

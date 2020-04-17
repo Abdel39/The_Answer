@@ -18,8 +18,8 @@ public class Phantomscript : MonoBehaviour
     private Vector3 rotat = new Vector3(0, 180,0);
     private bool retourner = true;
     
-    public Vector3 position;
-    public Vector3 positionperso;
+    private Vector3 position;
+    private Vector3 positionperso;
     
     // Start is called before the first frame update
     void Start()

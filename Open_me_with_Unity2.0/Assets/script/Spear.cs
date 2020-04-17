@@ -14,18 +14,14 @@ public class Spear : MonoBehaviour
     private int dammage = 1;
     public float Times;
     public float startTime;
-
-
-
+    
 
     void Start()
     {
         Times = startTime;
         body.velocity = transform.right * SpeedSpear;
     }
-
     
-
 
     void OnTriggerEnter2D(Collider2D info)
     {

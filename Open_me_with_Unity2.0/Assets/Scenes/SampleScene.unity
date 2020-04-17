@@ -619,8 +619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e329b231874192548981296b89f0ec73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  positionperso: {x: 0, y: 0, z: 0}
 --- !u!70 &364410508
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -963,8 +961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcbbdd1f8c5b844193d1fa25df0e8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  positionperso: {x: 0, y: 0, z: 0}
 --- !u!70 &600119569
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1946,8 +1942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f0be367b063e54d8f3373a6e04fbc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  positionperso: {x: 0, y: 0, z: 0}
   eclairprefabe: {fileID: 442871637006558507, guid: e22d8f640a6db014083162bb406c799f,
     type: 3}
 --- !u!1 &1443867044
@@ -2080,8 +2074,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e329b231874192548981296b89f0ec73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  positionperso: {x: 0, y: 0, z: 0}
 --- !u!70 &1614384968
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
