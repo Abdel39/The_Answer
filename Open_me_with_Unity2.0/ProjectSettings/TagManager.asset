@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - IsGround
-  - player
+  - spear
   layers:
   - Default
   - TransparentFX
@@ -16,7 +16,7 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
+  - Spear
   - 
   - 
   - 

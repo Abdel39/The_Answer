@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof( playermoves))]
@@ -12,31 +13,55 @@ public class PlayerMotor : MonoBehaviour
 
     public Vector2 velocity;
     public bool input_jump;
-    private bool input_dash;
-    public float jumpTime=(float)0.8;
+    
+    public float jumpTime;
     private float jumptimecounter;
     // physique 2D du personnage
     private Rigidbody2D rb;
     
+    
+    
+    //pour dash
+    private int direction;
+    public float dashSpeed;
+    private float dashTime;
+    public float startDashTime;
+    private float moveInput;
+    private bool candash;
+    
+    
     //vitesse max
-    [SerializeField] private float maxSpeed=500;
-    [SerializeField] private float Speed=300;
-    [SerializeField] private float jumpstrenght=20;
-    [SerializeField] private float dashstrength;
+    [SerializeField] private float maxSpeed;
+    [SerializeField] private float Speed;
+    [SerializeField] private float jumpstrenght;
     public bool isgrounded=false;
     public float cayotyTime = 0;
-    public bool candashagain = true;
+    
     public float fallingspeed = 1.1f;
     public float jumpingTime;
     public bool isjumping;
-    
     public bool isfacingright = true;
+    
+    
+    //animation
     public Animator animator;
     
     void Start()
     {
         velocity = Vector2.zero;
         rb = GetComponent<Rigidbody2D>();
+        
+        dashTime = startDashTime;
+
+    }
+
+    private void Update()
+    {
+        animator.SetFloat("Speed", Speed);
+        
+        animator.SetBool("IsJumping",!isgrounded);
+        
+        Dash();
     }
 
     // Update is called once per frame
@@ -44,8 +69,9 @@ public class PlayerMotor : MonoBehaviour
     {
             if (isgrounded)
             {
+                candash = true;
                 cayotyTime = 0.2f;
-                candashagain = true;
+                
             }
             else
             {
@@ -54,10 +80,7 @@ public class PlayerMotor : MonoBehaviour
 
             PerformRunAndJump();
           
-            if (input_dash)
-            {
-                Dash();
-            }
+           
             
            
             
@@ -70,19 +93,73 @@ public class PlayerMotor : MonoBehaviour
        
 
     }
-    
-    
-    
-    
-    
 
-    public void RunAndJump(Vector2 _velocity,bool jumpmemory,float dash)
+
+    private void Dash()
+    {
+        moveInput = Input.GetAxis("Horizontal");
+        if (direction == 0)
+        {
+            if (candash)
+            {
+                
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                                if (moveInput< 0)
+                                {
+                                    direction = 1;
+                                    Debug.Log("dir =1" );
+                                }
+                                else if (moveInput > 0)
+                                {
+                                    direction = 2;
+                                    Debug.Log("dir =2" );
+                                }
+                }
+            }
+            
+        }
+        else
+        {
+            if(dashTime <= 0)
+            {
+                direction = 0;
+                dashTime = startDashTime;
+                rb.velocity = Vector2.zero;
+            }
+            else
+            {
+                dashTime -= Time.deltaTime;
+
+                if(direction == 1)
+                {
+                    animator.SetTrigger("Dash");
+                    rb.AddForce(Vector2.left * dashSpeed);
+                    candash = false;
+                    
+                }
+                else if (direction == 2)
+                {
+                    animator.SetTrigger("Dash");
+                    rb.AddForce(Vector2.right * dashSpeed);
+                    candash = false;
+                }
+            }
+        }
+    }
+
+
+
+
+
+    public void RunAndJump(Vector2 _velocity,bool jumpmemory)
     {
         velocity = _velocity;
         input_jump = jumpmemory;
-        input_dash = dash > 0;
+        
         if (input_jump && (isgrounded||cayotyTime>0))
         {
+            
             isjumping = true;
             jumptimecounter = jumpTime;
         }
@@ -116,11 +193,6 @@ public class PlayerMotor : MonoBehaviour
         if (velocity.x == 0)
         {
             Speed = 0;
-            animator.SetBool("run",false);
-        }
-        else
-        {
-            animator.SetBool("run",true);
         }
 
         
@@ -146,18 +218,10 @@ public class PlayerMotor : MonoBehaviour
            
             Flip();
         }
+        
+        
 
 }
 
-    private void Dash()
-    {
-        if (candashagain)
-        {
-            rb.velocity= new Vector2(0,0);
-            rb.AddForce(new Vector2(velocity.x*dashstrength,velocity.y*dashstrength));
-            candashagain = false;
-        }
-    }
-
-
+    
 }

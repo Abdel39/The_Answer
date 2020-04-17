@@ -1217,9 +1217,9 @@ RectTransform:
   m_Father: {fileID: 585693889}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -366, y: 235}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -12.5}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &767783210
@@ -1483,6 +1483,7 @@ GameObject:
   - component: {fileID: 1094478747}
   - component: {fileID: 1094478748}
   - component: {fileID: 1094478749}
+  - component: {fileID: 1094478750}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -1524,8 +1525,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01, y: -0.1}
-  m_Size: {x: 0.24, y: 0.07549578}
+  m_Offset: {x: -0.01, y: -0.12}
+  m_Size: {x: 0.37, y: 0.07}
   m_Direction: 1
 --- !u!70 &1094478741
 CapsuleCollider2D:
@@ -1636,7 +1637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e85ba25a28180418e0ad511e682fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isfacingright: 0
   jumpmemory: 0
   jumpclock: 0
   Animator: {fileID: 1094478747}
@@ -1655,17 +1655,18 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   input_jump: 0
   jumpTime: 0.8
+  dashSpeed: 800
+  startDashTime: 0.15
   maxSpeed: 500
   Speed: 300
   jumpstrenght: 20
-  dashstrength: 1000
   isgrounded: 0
   cayotyTime: 0
-  candashagain: 1
   fallingspeed: 1.5
   jumpingTime: 0
   isjumping: 0
   isfacingright: 1
+  animator: {fileID: 1094478747}
 --- !u!95 &1094478747
 Animator:
   serializedVersion: 3
@@ -1721,6 +1722,18 @@ MonoBehaviour:
     m_Bits: 256
   damage: 15
   animator: {fileID: 1094478747}
+--- !u!114 &1094478750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094478738}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53d0c9fd7f4bee458ebfef184cc2e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1273756477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1824,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443867044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.01, z: -0.09521359}
+  m_LocalPosition: {x: 0.45, y: 0.09, z: -0.09521359}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1094478744}

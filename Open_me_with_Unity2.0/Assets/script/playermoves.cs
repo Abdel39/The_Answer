@@ -11,13 +11,12 @@ public class playermoves : MonoBehaviour
     private int invincibility = 30;
     
     private Rigidbody2D body;
-    public bool isfacingright = false;
+
     
     private bool isruning = false;
     private bool isGrounded = true;
     public bool jumpmemory = false;
     public float jumpclock = 0;
-    private float dash = 0;
     private PlayerMotor motor;
     private float x;
     private float y;
@@ -40,7 +39,7 @@ public class playermoves : MonoBehaviour
 
         
 
-        dash -= Time.deltaTime;
+       
         if (Input.GetAxisRaw("Jump") > 0)
         {
             jumpclock = 0.2f;
@@ -49,11 +48,10 @@ public class playermoves : MonoBehaviour
         {
             jumpclock -= Time.deltaTime;
         }
+        
+        
 
-        if (Input.GetButtonUp("dash"))
-        {
-            dash = 0.2f;
-        }
+        
 
        
 
@@ -71,7 +69,7 @@ public class playermoves : MonoBehaviour
         
             Vector2 velocity = new Vector2(x, y);
             //aplique la vélocité à payermotor
-            motor.RunAndJump(velocity, jumpclock > 0, dash);
+            motor.RunAndJump(velocity, jumpclock > 0);
            
                 
         
@@ -114,7 +112,5 @@ public class playermoves : MonoBehaviour
         
     }
 
-    
-
-    
+   
 }
