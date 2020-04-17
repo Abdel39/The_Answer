@@ -21,12 +21,6 @@ public class Weapon : MonoBehaviour
     
     void Update()
     {
-
-       
-        
-    
-        
-
         // avoir la lance et presser le bouton
         if (HaveSpear && Input.GetButtonDown("Fire3"))
         {
@@ -36,17 +30,14 @@ public class Weapon : MonoBehaviour
 
         }
 
-        if (test!=null)
+        if (test != null)
         {
             if (Input.GetKeyDown(KeyCode.R) && Istouch)
-                    {
-                        Destroy(test.gameObject);
-                        HaveSpear = true;
-                    }
+            {
+                Destroy(test.gameObject);
+                HaveSpear = true; 
+            }
         }
-
-        
-
     }
 
     
@@ -61,11 +52,6 @@ public class Weapon : MonoBehaviour
             test = info;
             
         }
-        
-        
-        
-      
-       
     }
 
 
