@@ -60,7 +60,7 @@ public class PlayerMotor : MonoBehaviour
         animator.SetFloat("Speed", Speed);
         
         animator.SetBool("IsJumping",!isgrounded);
-        
+        animator.SetBool("Ascention",isjumping);
         Dash();
     }
 
