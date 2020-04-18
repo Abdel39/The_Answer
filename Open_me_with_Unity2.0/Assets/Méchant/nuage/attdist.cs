@@ -19,7 +19,7 @@ public class attdist : MonoBehaviour
     private Vector3 position;
     private Vector3 positionperso;
 
-    private bool vatirer = false;
+    private bool vatirer = true;
     public GameObject eclairprefabe;
     // Start is called before the first frame update
     void Start()
@@ -56,7 +56,7 @@ public class attdist : MonoBehaviour
         if (positionperso.x - 10 < position.x && positionperso.x + 10 > position.x)
         {
             fastx = 0;
-            if (vatirer = true)
+            if (vatirer == true)
             {
                 StartCoroutine(spawnéclair());
             }
@@ -76,19 +76,21 @@ public class attdist : MonoBehaviour
 
     private  IEnumerator spawnéclair()
     {
-        vatirer = true;
-        yield return new WaitForSeconds(0.5f);
+        vatirer = false;
+        yield return new WaitForSeconds(0.7f);
         if (GameObject.Find("éclair(Clone)") == false)
         {
             if (positionperso.x > position.x)
             {
-                GameObject.Instantiate(eclairprefabe, position  + new Vector3( 01.3f, 0, 0), Quaternion.identity);
+                GameObject.Instantiate(eclairprefabe, position  + new Vector3( 01.2f, 0, 0), Quaternion.identity);
             }
             else
             {
-                GameObject.Instantiate(eclairprefabe, position  + new Vector3( -01.3f, 0, 0), Quaternion.identity);
+                GameObject.Instantiate(eclairprefabe, position  + new Vector3( -01.2f, 0, 0), Quaternion.identity);
             }
             vatirer = false;
         }
+
+        vatirer = true;
     }
 }
