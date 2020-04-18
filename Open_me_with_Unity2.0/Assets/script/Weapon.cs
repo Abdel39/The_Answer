@@ -18,17 +18,20 @@ public class Weapon : MonoBehaviour
     private bool Istouch = false;
     private Collider2D test;
     public bool HaveSpear;
-    
+    public Animator _animator;
     void Update()
     {
         // avoir la lance et presser le bouton
         if (HaveSpear && Input.GetButtonDown("Fire3"))
         {
          // tirer
+         HaveSpear = false;
         Spears();
-        HaveSpear = false;
+        
 
         }
+
+        _animator.SetBool("HaveSpear",HaveSpear);
 
         if (test != null)
         {
@@ -60,3 +63,4 @@ public class Weapon : MonoBehaviour
         Instantiate(SpearSpawn, FirePoint.position, FirePoint.rotation);
     }
 }
+    

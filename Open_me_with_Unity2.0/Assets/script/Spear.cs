@@ -14,7 +14,7 @@ public class Spear : MonoBehaviour
     private int dammage = 15;
     public float Times;
     public float startTime;
-    private bool HaveSpace;
+    
 
     void Start()
     {
