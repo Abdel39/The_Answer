@@ -157,4 +157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isinvulnerable: 0
+  "cam\xE9ra": {fileID: 4368111961172199278, guid: d8705b8002c3c40488c8801cdd91addc,
+    type: 3}
   hurtbox: {fileID: 0}

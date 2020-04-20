@@ -11,7 +11,7 @@ public class Spear : MonoBehaviour
     public float SpeedSpear;
     public Rigidbody2D body;
     private bool dir;
-    private int dammage = 15;
+    public int dammage = 15;
     public float Times;
     public float startTime;
     

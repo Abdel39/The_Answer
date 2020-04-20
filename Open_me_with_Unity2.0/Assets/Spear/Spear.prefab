@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedSpear: 30
   body: {fileID: 7463608165548403647}
+  dammage: 1
   Times: 0
   startTime: 1
 --- !u!61 &6950191537980107574
