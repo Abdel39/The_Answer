@@ -702,7 +702,9 @@ MonoBehaviour:
   FirePoint: {fileID: 1619585047}
   SpearSpawn: {fileID: 442871637006558507, guid: 63fcff6a6c1212047aca54ddc0724b42,
     type: 3}
+  Istouch: 0
   HaveSpear: 1
+  _animator: {fileID: 0}
 --- !u!95 &338444133
 Animator:
   serializedVersion: 3
@@ -737,17 +739,19 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   input_jump: 0
   jumpTime: 0.8
+  dashSpeed: 0
+  startDashTime: 0
+  candash: 0
   maxSpeed: 500
   Speed: 300
   jumpstrenght: 20
-  dashstrength: 1000
   isgrounded: 0
   cayotyTime: 0
-  candashagain: 1
   fallingspeed: 1.5
   jumpingTime: 0
   isjumping: 0
   isfacingright: 1
+  animator: {fileID: 0}
 --- !u!114 &338444135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,7 +764,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e85ba25a28180418e0ad511e682fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 50
   jumpmemory: 0
   jumpclock: 0
   Animator: {fileID: 338444133}
@@ -1281,6 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974f168868800484e91310a4641e1d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameIsPaused: 0
   pauseMenuUI: {fileID: 1806777328}
   audioSource: {fileID: 233995082}
 --- !u!114 &899384330
