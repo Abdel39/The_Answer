@@ -27,7 +27,7 @@ public class PlayerMotor : MonoBehaviour
     private float dashTime;
     public float startDashTime;
     private float moveInput;
-    private bool candash;
+    public bool candash;
     
     
     //vitesse max
@@ -62,6 +62,7 @@ public class PlayerMotor : MonoBehaviour
         animator.SetBool("IsJumping",!isgrounded);
         animator.SetBool("Ascention",isjumping);
         Dash();
+        
     }
 
     // Update is called once per frame
@@ -105,6 +106,8 @@ public class PlayerMotor : MonoBehaviour
                 
                 if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
+
+                    
                                 if (moveInput< 0)
                                 {
                                     direction = 1;

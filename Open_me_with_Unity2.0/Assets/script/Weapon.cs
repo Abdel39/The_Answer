@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour
 
     public GameObject SpearSpawn;
     
-    private bool Istouch = false;
+    public bool Istouch = false;
     private Collider2D test;
     public bool HaveSpear;
     public Animator _animator;
