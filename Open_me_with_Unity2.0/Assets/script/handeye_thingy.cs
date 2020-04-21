@@ -38,6 +38,7 @@ public class handeye_thingy : MonoBehaviour
     public int reparmax = 300;
 
     public int whatisdestroyed;
+    public bool goingup = true;
     
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -165,7 +166,7 @@ public class handeye_thingy : MonoBehaviour
 
     public void Lazor()
     {
-        Instantiate(lazor, new Vector3(11.4f, rb.position.y + 0.2f),new Quaternion(0f,0f,0f,0f));
+        Instantiate(lazor, new Vector3(14f, rb.position.y + 0.2f),new Quaternion(0f,0f,0f,0f));
     }
 
     public void Move()
@@ -174,14 +175,26 @@ public class handeye_thingy : MonoBehaviour
         if (y > 5 || y < -5)
         {
             rb.velocity = Vector2.zero;
-            
             if (y > 0)
             {
+                goingup = false;
                 rb.velocity = new Vector2(0, -10);
             }
             else
             {
+                goingup = true;
                 rb.velocity = new Vector2(0, 10);
+            }
+        }
+        else
+        {
+            if (goingup)
+            {
+                rb.velocity = new Vector2(0, 10);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, -10);
             }
         }
     }
