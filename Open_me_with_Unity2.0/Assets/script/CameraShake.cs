@@ -40,28 +40,24 @@ public class CameraShake : MonoBehaviour {
         
         
         
-        // TODO: Replace with your trigger
-        if (Input.GetKey(KeyCode.S))
-        {
-            ShakeElapsedTime = ShakeDuration;
-        }
+        
 
-        // If the Cinemachine componet is not set, avoid update
+        
         if (VirtualCamera != null && virtualCameraNoise != null)
         {
-            // If Camera Shake effect is still playing
+            
             if (ShakeElapsedTime > 0)
             {
-                // Set Cinemachine Camera Noise parameters
+                
                 virtualCameraNoise.m_AmplitudeGain = ShakeAmplitude;
                 virtualCameraNoise.m_FrequencyGain = ShakeFrequency;
 
-                // Update Shake Timer
+                
                 ShakeElapsedTime -= Time.deltaTime;
             }
             else
             {
-                // If Camera Shake effect is over, reset variables
+               
                 virtualCameraNoise.m_AmplitudeGain = 0f;
                 ShakeElapsedTime = 0f;
             }
