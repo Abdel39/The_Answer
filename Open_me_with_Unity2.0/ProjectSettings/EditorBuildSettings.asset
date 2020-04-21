@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EditedLvl.unity
     guid: ce7d2975991dceb42bbb76f5dd5b3ffa
+  - enabled: 1
+    path: Assets/Scenes/First level.unity
+    guid: 340577c940c2d62438b56cf51e2c44f1
+  - enabled: 1
+    path: Assets/Scenes/Hades boss battle.unity
+    guid: 64a81bd01f20fc444980236ac226c344
+  - enabled: 1
+    path: Assets/Scenes/Hub.unity
+    guid: eb342c301b05bc544befd223d8315243
+  - enabled: 1
+    path: Assets/Scenes/Mars boss Battle.unity
+    guid: 6ec75b10267b1cd40936681a4baf6ddb
   m_configObjects: {}
