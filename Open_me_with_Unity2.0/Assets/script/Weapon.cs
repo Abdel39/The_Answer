@@ -48,13 +48,17 @@ public class Weapon : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D info)
     {
+        
         Spear spear = info.GetComponent<Spear>();
+        
+        
         if (spear!=null)
         {
             Istouch = true;
             test = info;
             
         }
+        
     }
 
 

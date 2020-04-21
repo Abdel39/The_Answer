@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Mimo\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Mimo\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Open_me_with_Unity2.0.762786923.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Mimo\Desktop\GitHub\The_Answerrep\Open_me_with_Unity2.0" t="IncludeRecursive">
+    <e p="C:\Users\sambo\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\sambo\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Open_me_with_Unity2.0.1049698348.00" t="ExcludeRecursive" />
+    <e p="C:\Users\sambo\OneDrive\Bureau\The_Answerrep\Open_me_with_Unity2.0" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="bingbong.cs" t="Include" />
-        <e p="handeycooridination.cs" t="Include" />
-        <e p="handeye_thingy.cs" t="Include" />
-        <e p="LaunchSceneScript.cs" t="Include" />
         <e p="menu" t="Include">
           <e p="MainMenu.cs" t="Include" />
           <e p="menu_assets" t="Include">
@@ -100,11 +96,15 @@
           </e>
         </e>
         <e p="script" t="Include">
+          <e p="bingbong.cs" t="Include" />
           <e p="CameraShake.cs" t="Include" />
           <e p="changerLesTouches.cs" t="Include" />
           <e p="check.cs" t="Include" />
           <e p="ColorToPrefab.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
+          <e p="handeycooridination.cs" t="Include" />
+          <e p="handeye_thingy.cs" t="Include" />
+          <e p="LaunchSceneScript.cs" t="Include" />
           <e p="lel.cs" t="Include" />
           <e p="LevelGenerator.cs" t="Include" />
           <e p="LifeImage.cs" t="Include" />
@@ -116,6 +116,7 @@
           <e p="settingMenu.cs" t="Include" />
           <e p="Spear.cs" t="Include" />
           <e p="startMenuScene.cs" t="Include" />
+          <e p="teleporteur.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
         </e>
       </e>
