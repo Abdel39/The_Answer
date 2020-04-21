@@ -6,6 +6,8 @@ TagManager:
   tags:
   - IsGround
   - spear
+  - player
+  - Teleporteur
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - 
   - Enemy
   - Spear
-  - 
-  - 
+  - Tp
+  - Player
   - 
   - 
   - 
