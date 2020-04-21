@@ -5,8 +5,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int hp =10;
+<<<<<<< Updated upstream
 
     private bool IsAlive = true;
+=======
+    
+    public bool IsAlive = true;
+    public bool isinvulnerable = false;
+    public CameraShake caméra;
+>>>>>>> Stashed changes
 
     public Transform hurtbox;
     // Start is called before the first frame update
@@ -24,8 +31,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int dammage)
+    public void TakeDamage(int dammage, bool isinv=true)
     {
+<<<<<<< Updated upstream
+=======
+        caméra.ShakeElapsedTime = caméra.ShakeDuration;
+        
+        if (isinvulnerable&&isinv)
+            return;
+        
+>>>>>>> Stashed changes
         hp = hp -dammage;
         
         if (hp <= 0)
