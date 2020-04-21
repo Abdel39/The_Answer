@@ -671,7 +671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513739260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: 0.09, z: -0.09521359}
+  m_LocalPosition: {x: 0.35, y: 0.2, z: -0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1094032775}
@@ -953,7 +953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Start_Between_Attack: 0.2
   AttackPos: {fileID: 1745220066}
-  AttackRange: 0.79
+  AttackRange: 1.22
   WhatIsEnemies:
     serializedVersion: 2
     m_Bits: 256
@@ -1182,7 +1182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745220065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.03, z: -0.09521359}
+  m_LocalPosition: {x: 0.32, y: 0.03, z: -0.09521359}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1094032775}
