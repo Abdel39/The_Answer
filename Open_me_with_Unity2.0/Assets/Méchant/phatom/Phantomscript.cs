@@ -43,44 +43,47 @@ public class Phantomscript : MonoBehaviour
         position = phantom.transform.position;
         positionperso = GameObject.Find("character").transform.position;
 
-        if (positionperso.x - 1.8 < position.x && positionperso.x + 1.8 > position.x)
+        if (positionperso.x - 13 < position.x && positionperso.x + 13 > position.x)
         {
-            fastx = 0;
-        }
-        else if (positionperso.x < position.x)
-        {
-            fastx = -7;
-            if (!retourner)
+            if (positionperso.x - 1.8 < position.x && positionperso.x + 1.8 > position.x)
             {
-                phantom.transform.Rotate(rotat);
-                retourner = true;
+                fastx = 0;
             }
-        }
-        else
-        {
-            fastx = 7;
-            if (retourner)
+            else if (positionperso.x < position.x)
             {
-                phantom.transform.Rotate(rotat);
-                retourner = false;
+                fastx = -7;
+                if (!retourner)
+                {
+                    phantom.transform.Rotate(rotat);
+                    retourner = true;
+                }
             }
+            else
+            {
+                fastx = 7;
+                if (retourner)
+                {
+                    phantom.transform.Rotate(rotat);
+                    retourner = false;
+                }
+            }
+
+            if (positionperso.y - 0.5 < position.y && positionperso.y + 0.5 > position.y)
+            {
+                fasty = 0;
+            }
+            else if (positionperso.y < position.y)
+            {
+                fasty = -4;
+            }
+            else
+            {
+                fasty = 4;
+            }
+
+            Vector3 move = new Vector3(fastx, fasty, 0);
+            phantom.velocity = move;
         }
-        
-        if (positionperso.y - 0.5 < position.y && positionperso.y + 0.5 > position.y)
-        {
-            fasty = 0;
-        }
-        else if (positionperso.y < position.y)
-        {
-            fasty = -4;
-        }
-        else
-        {
-            fasty = 4;
-        }
-        
-        Vector3 move = new Vector3(fastx, fasty, 0);
-        phantom.velocity = move;
     }
 
     public void TakeDamage(int damage)

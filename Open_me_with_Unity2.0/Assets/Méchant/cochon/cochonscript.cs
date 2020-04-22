@@ -43,29 +43,32 @@ public class cochonscript : MonoBehaviour
         position = cochon.transform.position;
         positionperso = GameObject.Find("character").transform.position;
 
-        if (positionperso.x - 1.8 < position.x && positionperso.x + 1.8 > position.x)
+        if (positionperso.x - 13 < position.x && positionperso.x + 13 > position.x)
         {
-            fastx = 0;
-        }
-        else if (positionperso.x < position.x)
-        {
-            fastx = -4;
-            if (!retourner)
+            if (positionperso.x - 1.8 < position.x && positionperso.x + 1.8 > position.x)
             {
-                cochon.transform.Rotate(rotat);
-                retourner = true;
+                fastx = 0;
+            }
+            else if (positionperso.x < position.x)
+            {
+                fastx = -4;
+                if (!retourner)
+                {
+                    cochon.transform.Rotate(rotat);
+                    retourner = true;
+                }
+            }
+            else
+            {
+                fastx = 4;
+                if (retourner)
+                {
+                    cochon.transform.Rotate(rotat);
+                    retourner = false;
+                }
             }
         }
-        else
-        {
-            fastx = 4;
-            if (retourner)
-            {
-                cochon.transform.Rotate(rotat);
-                retourner = false;
-            }
-        }
-        
+
         //if (positionperso.y - 0.5 < position.y && positionperso.y + 0.5 > position.y)
         //{
         //    fasty = 0;

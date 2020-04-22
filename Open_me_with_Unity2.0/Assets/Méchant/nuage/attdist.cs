@@ -31,11 +31,11 @@ public class attdist : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         velocity = Vector2.zero;
         position = nuage.transform.position;
         positionperso = GameObject.Find("character").transform.position;
-        
+
         if (positionperso.x < position.x)
         {
             if (!retourner)
@@ -53,25 +53,28 @@ public class attdist : MonoBehaviour
             }
         }
 
-        if (positionperso.x - 10 < position.x && positionperso.x + 10 > position.x)
+        if (positionperso.x - 13 < position.x && positionperso.x + 13 > position.x)
         {
-            fastx = 0;
-            if (vatirer == true)
+            if (positionperso.x - 10 < position.x && positionperso.x + 10 > position.x)
             {
-                StartCoroutine(spawnéclair());
+                fastx = 0;
+                if (vatirer == true)
+                {
+                    StartCoroutine(spawnéclair());
+                }
             }
+            else if (positionperso.x < position.x)
+            {
+                fastx = -4;
+            }
+            else
+            {
+                fastx = 4;
+            }
+
+            Vector3 move = new Vector3(fastx, nuage.velocity.y, 0);
+            nuage.velocity = move;
         }
-        else if (positionperso.x < position.x)
-        {
-            fastx = -4;
-        }
-        else
-        {
-            fastx = 4;
-        }
-        
-        Vector3 move = new Vector3(fastx, nuage.velocity.y, 0);
-        nuage.velocity = move;
     }
 
     private  IEnumerator spawnéclair()
