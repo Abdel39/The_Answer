@@ -458,6 +458,8 @@ MonoBehaviour:
   reparmax: 500
   whatisdestroyed: 0
   goingup: 1
+  hand: {fileID: 1458693002}
+  chronos: {fileID: 1418519610}
 --- !u!50 &130031083
 Rigidbody2D:
   serializedVersion: 4
@@ -28281,7 +28283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418519609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.31, y: 7.57, z: 0}
+  m_LocalPosition: {x: -4, y: 12.93, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -28331,7 +28333,7 @@ GameObject:
   - component: {fileID: 1458693000}
   - component: {fileID: 1458693002}
   m_Layer: 0
-  m_Name: l4_sprite_1
+  m_Name: hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -41,6 +41,9 @@ public class handeye_thingy : MonoBehaviour
     public bool goingup = true;
     
     private Rigidbody2D rb;
+
+    public Animator hand;
+    public Animator chronos;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +82,7 @@ public class handeye_thingy : MonoBehaviour
             lazerclock = maxlazer;
             isdestroying--;
             rb.velocity= new Vector2(0,-40);
+            chronos.SetTrigger("need_help");
         }
         else
         {
@@ -115,6 +119,18 @@ public class handeye_thingy : MonoBehaviour
                 movingclock = maxclock;
                 isdestroying = desroymax;
                 whatisdestroyed = Random.Range(1, 4);
+                switch (whatisdestroyed)
+                {
+                 case 1:
+                     hand.SetTrigger("centre");
+                     break;
+                 case 2:
+                     hand.SetTrigger("gauche");
+                     break;
+                 case 3:
+                     hand.SetTrigger("droite");
+                     break;
+                }
                 rb.velocity= new Vector2(0,100);
             }
 
