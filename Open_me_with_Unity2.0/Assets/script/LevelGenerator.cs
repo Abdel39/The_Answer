@@ -25,7 +25,7 @@ public class LevelGenerator : MonoBehaviour
     public bool fromEditedScene;
 
     // Start is called before the first frame update
-    void Start()
+    /*/void Start()
     {
         if (fromEditedScene)
         {
@@ -141,6 +141,6 @@ public class LevelGenerator : MonoBehaviour
                 Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
             }
         }
-    }
+    }/*/
 
 }
