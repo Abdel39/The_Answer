@@ -12,9 +12,8 @@ using UnityEngine.SceneManagement;
 public class LevelGenerator : MonoBehaviour
 {
 
-    private static Texture2D map;
+    public Texture2D map;
     public ColorToPrefab[] colorMappings;
-    public Text debugText;
 
 
 
@@ -25,9 +24,9 @@ public class LevelGenerator : MonoBehaviour
     public bool fromEditedScene;
 
     // Start is called before the first frame update
-    /*/void Start()
+    void Start()
     {
-        if (fromEditedScene)
+        if (fromEditedScene && my_path!= null && my_path!="")
         {
             Debug.Log("depuis editScene");
             FetchTheImage();
@@ -68,7 +67,10 @@ public class LevelGenerator : MonoBehaviour
 
         Debug.Log("je les ai ajouté a ma liste et a ma drop box");
 
-
+        if (listLvl.Count > 0)
+        {
+            my_path = Application.dataPath + @"/lvlEditor/" + listLvl[0] + ".png";
+        }
 
 
     }
@@ -93,16 +95,20 @@ public class LevelGenerator : MonoBehaviour
     private void FetchTheImage()
     {
         Debug.Log("fetch the image");
-       
-         
+
+        if (my_path != null && my_path != "")
+        {
             Debug.Log("je fetch l image");
             Debug.Log("son path : " + my_path);
-            byte[] photoInBytes = File.ReadAllBytes(my_path);// j ai un probleme sur 
-            bool mapAvaiable = map.LoadImage(photoInBytes);//ces deux lignes
-        Debug.Log("j ai une erreur : " + mapAvaiable);
-       
+            byte[] photoInBytes = File.ReadAllBytes(my_path);
+            bool mapAvaiable = map.LoadImage(photoInBytes);
+            Debug.Log("j ai une erreur : " + mapAvaiable);
+        }
+        else
+        {
+            Debug.Log("oupsi le path est vide ");
+        }
 
-        debugText.text = "l image est : " + my_path;
 
     }
 
@@ -141,6 +147,6 @@ public class LevelGenerator : MonoBehaviour
                 Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
             }
         }
-    }/*/
+    }
 
 }
