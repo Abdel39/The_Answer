@@ -6,65 +6,162 @@
         xmlns:local="clr-namespace:WpfTest"
         Loaded="Window_Loaded"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Level Editor" Height="500" Width="900" Icon="outils.png">
 
-
-    <Grid>
-        <Grid.ColumnDefinitions>
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
 
-        <TreeView x:Name="itemsView">
-            <TreeView.Resources>
-                <Style TargetType="{x:Type TreeViewItem}">
-                    <Setter Property="HeaderTemplate">
-                        <Setter.Value>
-                            <DataTemplate>
-                                <Button x:Name="mapItem" Click="MapItem_Click">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Width="20" Margin="3"/>
-                                        <TextBlock x:Name="mapItemName" VerticalAlignment="Center" Text="Binding"/>
-                                    </StackPanel>
-                                </Button>                                                              
-                            </DataTemplate>                            
-                        </Setter.Value>                        
-                    </Setter>
-                </Style>
-            </TreeView.Resources>
-        </TreeView>
-        
-        <Grid
-            Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="9*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="2">
+                <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
 
-            <StackPanel>
-                <TextBlock Text="The Level Name : " Padding="4" FontWeight="Bold"/>
-                <TextBox Grid.Row ="0" x:Name="lvlName" Padding="3" TextChanged="LvlName_TextChanged" />
-            </StackPanel>
-            
-            
-            <Image
-                Grid.Row="1"
-            x:Name="myBitmapImage"
-               />
+                <TextBlock MouseDown="Gomme_Clicked" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Text="Gomme"/>
+                <Image Margin="0,5,0,5" MouseDown="Gomme_Clicked" Grid.Row="1"  Source="eraser_image.png"  />
 
-            <Button
-                x:Name="SaveButton" Click="SaveButton_Click"
-                Grid.Row="2"
-                VerticalAlignment="Center"
-                HorizontalAlignment="center">
-                <TextBlock
-                    FontSize="20"
-                    Text="Save And quit" Padding="3"/>
-            </Button>
+
+                <TextBlock  MouseDown="Plateforme_Clicked" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="2" Text="Plateforme"/>
+                <Image Margin="0,5,0,5" MouseDown="Plateforme_Clicked" Grid.Row="3" Source="plateforme_image.png"/>
+
+                <TextBlock  MouseDown="Cochon_Clicked" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="4" Text="Cochon"/>
+                <Image Margin="0,5,0,5" MouseDown="Cochon_Clicked" Grid.Row="5" Source="cochon_image.png" />
+
+
+                <TextBlock  MouseDown="Fantome_Clicked" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="6" Text="Fantome"/>
+                <Image Margin="0,5,0,5" MouseDown="Fantome_Clicked"  Grid.Row="7"  Source="fantome_image.png"/>
+
+                
+
+
+            </Grid>
+            </Border>
+
+
+            <Grid Grid.Column="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="13*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                
+                
+                <StackPanel>
+                    <TextBlock Text="The Level Name : " Padding="4" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBox Margin="0,0,20,0" Grid.Row ="0" x:Name="lvlName" Padding="3" TextChanged="LvlName_TextChanged" />
+                </StackPanel>
+            
+
+            <Border Grid.Row="1" BorderBrush="Black" BorderThickness="2" Margin="5,5,5,5">
+                <Grid  x:Name="myImageGrid">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+
+                    </Grid.RowDefinitions>
+                </Grid>
+            </Border>
+
+            
+                <Button Grid.Row="2" x:Name="SaveButton" Click="SaveButton_Click"
+               
+                        Content="Save And Quit" Margin="10,5,10,5" >
+
+                    </Button>
+           
+
         </Grid>
-      
-    </Grid>
-   
+     
+
+        </Grid>
+    
+
 
 </Window>
