@@ -80,7 +80,7 @@ public class attdist : MonoBehaviour
     private  IEnumerator spawnéclair()
     {
         vatirer = false;
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1.3f);
         if (GameObject.Find("éclair(Clone)") == false)
         {
             if (positionperso.x > position.x)

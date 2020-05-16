@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
         }
 
         
-        Debug.Log("ouch"+name);
+        Debug.Log("ouch " + name);
     }
     
 }

@@ -45,7 +45,7 @@ public class Phantomscript : MonoBehaviour
 
         if (positionperso.x - 13 < position.x && positionperso.x + 13 > position.x)
         {
-            if (positionperso.x - 1.8 < position.x && positionperso.x + 1.8 > position.x)
+            if (positionperso.x - 1.3 < position.x && positionperso.x + 1.3 > position.x)
             {
                 fastx = 0;
             }
