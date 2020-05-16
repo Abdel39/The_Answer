@@ -83,6 +83,15 @@ public class playermoves : MonoBehaviour
         {
             TakeDamage(1);
         }
+        
+        Pyke pike = other.collider.GetComponent<Pyke>();
+        if (pike != null)
+        {
+            TakeDamage(3);
+        }
+        
+        
+        
     }
 
     public void TakeDamage(int damage)

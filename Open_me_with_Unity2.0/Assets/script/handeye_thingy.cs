@@ -21,7 +21,7 @@ public class handeye_thingy : MonoBehaviour
     public Object plat6;
 
     public Object lazor;
-    
+    public Weapon weapon;
     public int isdestroying = 0;
     public bool isDestroyed = false;
     public bool islasering = false;
@@ -90,8 +90,18 @@ public class handeye_thingy : MonoBehaviour
             {
                 if (repar == 0)
                 {
+
+                    weapon.HaveSpear = true;
+                    
+                    
+                    
+                    
                     switch (whatisdestroyed)
                     {
+                        
+                        
+                        
+                        
                         case 1 :
                             plat1=Instantiate(platform1,new Vector3(-6.4f,-1f,0f), new Quaternion(0f,0f,0f,0f));
                             plat2=Instantiate(platform2,new Vector3(-5.5f,-6f,0f), new Quaternion(0f,0f,0f,0f));
