@@ -108,6 +108,7 @@
           <e p="LifeImage.cs" t="Include" />
           <e p="Mars_bihavior.cs" t="Include" />
           <e p="PauseMenu.cs" t="Include" />
+          <e p="phantomscript_boss.cs" t="Include" />
           <e p="Player_Attack.cs" t="Include" />
           <e p="PlayerMotor.cs" t="Include" />
           <e p="playermoves.cs" t="Include" />
@@ -115,6 +116,7 @@
           <e p="Pyke.cs" t="Include" />
           <e p="settingMenu.cs" t="Include" />
           <e p="spawn_spectre_1.cs" t="Include" />
+          <e p="spawn_spectre_2.cs" t="Include" />
           <e p="Spear.cs" t="Include" />
           <e p="startMenuScene.cs" t="Include" />
           <e p="teleporteur.cs" t="Include" />

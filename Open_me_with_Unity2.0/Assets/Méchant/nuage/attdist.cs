@@ -53,7 +53,8 @@ public class attdist : MonoBehaviour
             }
         }
 
-        if (positionperso.x - 13 < position.x && positionperso.x + 13 > position.x)
+        if (positionperso.x - 13 < position.x && positionperso.x + 13 > position.x 
+                                              && positionperso.y - 13 < position.y && positionperso.y + 13 > position.y)
         {
             if (positionperso.x - 10 < position.x && positionperso.x + 10 > position.x)
             {

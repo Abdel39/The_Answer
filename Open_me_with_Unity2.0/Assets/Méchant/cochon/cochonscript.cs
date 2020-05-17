@@ -45,7 +45,7 @@ public class cochonscript : MonoBehaviour
 
         if (positionperso.x - 13 < position.x && positionperso.x + 13 > position.x)
         {
-            if (positionperso.x - 1.8 < position.x && positionperso.x + 1.8 > position.x)
+            if (positionperso.x - 1.2 < position.x && positionperso.x + 1.2 > position.x)
             {
                 fastx = 0;
             }

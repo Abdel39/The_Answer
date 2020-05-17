@@ -45,7 +45,7 @@ public class Phantomscript : MonoBehaviour
 
         if (positionperso.x - 13 < position.x && positionperso.x + 13 > position.x)
         {
-            if (positionperso.x - 1.3 < position.x && positionperso.x + 1.3 > position.x)
+            if (positionperso.x - 1.2 < position.x && positionperso.x + 1.2 > position.x)
             {
                 fastx = 0;
             }
@@ -82,6 +82,11 @@ public class Phantomscript : MonoBehaviour
             }
 
             Vector3 move = new Vector3(fastx, fasty, 0);
+            phantom.velocity = move;
+        }
+        else
+        {
+            Vector3 move = new Vector3(0, 0, 0);
             phantom.velocity = move;
         }
     }
