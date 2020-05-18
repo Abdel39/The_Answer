@@ -13,6 +13,11 @@ public class poseidons_bihavior : MonoBehaviour
     private int cooldown;
     private Rigidbody2D rb;
     private Transform player;
+
+    public Animator Animator;
+    public deplacement Deplacement;
+
+    private int lazer = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +42,13 @@ public class poseidons_bihavior : MonoBehaviour
                 cooldown = cool;
                 attacklen = attlen;
                 isattacking = true;
+                Animator.SetTrigger("ATT");
                 rb.velocity=Vector2.zero;
+                lazer--;
+                if (lazer == 0)
+                {
+                    Deplacement.scrol = 0;
+                }
             }
         }
     }
@@ -47,9 +58,14 @@ public class poseidons_bihavior : MonoBehaviour
         if (attacklen < 100)
         {
             Lazor();
+            if (attacklen == 99)
+            {
+                Animator.SetTrigger("LAZ");
+            }
             if (attacklen == 0)
             {
                 isattacking = false;
+                Animator.SetTrigger("END");
             }
         }
 
@@ -65,6 +81,8 @@ public class poseidons_bihavior : MonoBehaviour
 
     public void Lazor()
     {
-        Debug.Log("LAZOR");
+        float p = player.position.y - rb.position.y;
+        if (p>-0.125 && p<0.320)
+            player.GetComponent<playermoves>().TakeDamage(1);
     }
 }

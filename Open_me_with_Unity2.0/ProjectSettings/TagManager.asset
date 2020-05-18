@@ -8,6 +8,7 @@ TagManager:
   - spear
   - player
   - Teleporteur
+  - Ennemies
   layers:
   - Default
   - TransparentFX

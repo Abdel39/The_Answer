@@ -10,17 +10,10 @@ public class deplacement : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 velocity;
     public float scrol;
-    void Start()
-    {
-
-
-        rb.velocity = transform.right * scrol;
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        rb.velocity = transform.right * scrol;
     }
 }
