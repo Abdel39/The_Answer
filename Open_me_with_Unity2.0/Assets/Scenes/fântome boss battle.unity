@@ -552,7 +552,7 @@ MonoBehaviour:
   hp: 1
   IsAlive: 1
   isinvulnerable: 0
-  "cam\xE9ra": {fileID: 0}
+  "cam\xE9ra": {fileID: 1721859345}
   hurtbox: {fileID: 0}
 --- !u!114 &521843641
 MonoBehaviour:
@@ -5729,7 +5729,7 @@ MonoBehaviour:
   hp: 1
   IsAlive: 1
   isinvulnerable: 0
-  "cam\xE9ra": {fileID: 0}
+  "cam\xE9ra": {fileID: 1721859345}
   hurtbox: {fileID: 0}
 --- !u!114 &1093090033
 MonoBehaviour:
@@ -11107,6 +11107,18 @@ Transform:
   m_Father: {fileID: 1804609344}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1721859345 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4368111961172199278, guid: d8705b8002c3c40488c8801cdd91addc,
+    type: 3}
+  m_PrefabInstance: {fileID: 347153181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11887ea1d8f6e474ea35b019b15e35a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1727821741
 GameObject:
   m_ObjectHideFlags: 0
