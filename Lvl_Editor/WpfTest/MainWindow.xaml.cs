@@ -25,6 +25,7 @@ namespace WpfTest
     public partial class MainWindow : Window
     {
         private Bitmap image1;
+        private bool thereIsTheFlag = false;
         private System.Windows.Media.Color penColor = System.Windows.Media.Color.FromArgb(255, 255, 255, 255);
         public void loadImage()
         {
@@ -58,7 +59,7 @@ namespace WpfTest
         public void openLvlFromFile()
         {
 
-            string currentPath = Directory.GetCurrentDirectory();
+           /* string currentPath = Directory.GetCurrentDirectory();
             string[] files = Directory.GetFiles(currentPath);
             List<String> levels = new List<string>();
 
@@ -78,7 +79,7 @@ namespace WpfTest
 
             }
 
-            image1 = new Bitmap(levels[0], true);//par defaut, j ouvre le premier fichier png et apres je recolorie 
+            image1 = new Bitmap(levels[0], true);//par defaut, j ouvre le premier fichier png et apres je recolorie */
             
         }
 
@@ -119,52 +120,7 @@ namespace WpfTest
            
         }
 
-        private void ZoomCanvas()
-        {
-            
-                /*double factor = 5f;
-                Matrix scaleMatrix = new Matrix();
-                scaleMatrix.ScaleAt(factor, factor,
-
-                this.DrawingCanvas.ActualWidth / 2,
-                this.DrawingCanvas.ActualHeight / 2);
-
-            this.DrawingCanvas.Strokes.Transform(scaleMatrix, false);*/
-
-        }
-
-        private void ConvertCanvasToBitmap()
-        {
-            /*//get the dimensions of the ink control
-            int margin = (int)this.DrawingCanvas.Margin.Left;
-            int width = (int)this.DrawingCanvas.ActualWidth - margin;
-            int height = (int)this.DrawingCanvas.ActualHeight - margin;
-
-            //render ink to bitmap
-            RenderTargetBitmap rtb =
-               new RenderTargetBitmap(width, height, 96d, 96d, PixelFormats.Default);
-            rtb.Render(DrawingCanvas);
-
-            //save the ink to a memory stream
-            BmpBitmapEncoder encoder = new BmpBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(rtb));
-            byte[] bitmapBytes;
-            using (MemoryStream ms = new MemoryStream())
-            {
-                encoder.Save(ms);
-
-                //get the bitmap bytes from the memory stream
-                ms.Position = 0;
-                bitmapBytes = ms.ToArray();
-            }
-
-            using (var ms = new MemoryStream(bitmapBytes))
-            {
-                image1 = new Bitmap(ms);
-            }*/
-        }
-
-
+ 
         private bool ContainsWeirdChars(string text)
         {
             bool result = false;
@@ -193,12 +149,6 @@ namespace WpfTest
             
         }
 
-       
-        private void displayImageOnScreen()
-        {
-           
-
-        }
 
         public void init_Panels()
         {
@@ -241,8 +191,9 @@ namespace WpfTest
         private void ConvertColorToImage(System.Windows.Media.Color color, Image panel)
         {
             System.Windows.Media.Color blueCochon = System.Windows.Media.Color.FromArgb(255, 0, 0, 255);
-            System.Windows.Media.Color grayFantome = System.Windows.Media.Color.FromArgb(255, 100, 100, 100);
+            System.Windows.Media.Color grayFantome = System.Windows.Media.Color.FromArgb(255, 0, 255, 0);
             System.Windows.Media.Color blackPlateforme = System.Windows.Media.Color.FromArgb(255, 0, 0, 0);
+            System.Windows.Media.Color redFlag = System.Windows.Media.Color.FromArgb(255, 255, 0, 0);
 
             BitmapImage result = new BitmapImage();
             
@@ -264,6 +215,12 @@ namespace WpfTest
             {
                 result.BeginInit();
                 result.UriSource = new Uri("plateforme_image.png", UriKind.Relative);
+                result.EndInit();
+            }
+            else if (color.Equals(redFlag))
+            {
+                result.BeginInit();
+                result.UriSource = new Uri("drapeau.png", UriKind.Relative);
                 result.EndInit();
             }
             else if (color.B==0 && color.R == 0 && color.G == 0)
@@ -302,7 +259,6 @@ namespace WpfTest
             int sRow = Grid.GetRow(panel);
 
 
-            ConvertColorToImage(penColor, panel);
             
 
             byte alpha = penColor.A;
@@ -310,9 +266,34 @@ namespace WpfTest
             byte green = penColor.G;
             byte blue = penColor.B;
 
-            image1.SetPixel(sCol, sRow, System.Drawing.Color.FromArgb(alpha,red,green,blue));
-        }
+            if (thereIsTheFlag && red ==255 && green==0 && blue == 0)
+            {
+                MessageBox.Show("There arleady is a flag");
+            }
+            else
+            {
+                ConvertColorToImage(penColor, panel);// dessine l image 
 
+                if (image1.GetPixel(sCol, sRow).R==255 && image1.GetPixel(sCol, sRow).B == 0 && image1.GetPixel(sCol, sRow).G == 0
+                    && (red != 255 || green!=0 || blue!= 0))
+                {
+                    // on efface notre drapeau
+                    Console.WriteLine("on efface");
+                    thereIsTheFlag = false;
+                }
+
+                image1.SetPixel(sCol, sRow, System.Drawing.Color.FromArgb(alpha, red, green, blue));
+
+                
+                if (red == 255 && green == 0 && blue == 0)
+                {
+                    thereIsTheFlag = true;// on met le flag
+
+                    Console.WriteLine("on le met");
+                }
+            }
+           
+        }
 
         private void MapItem_Click(object sender, RoutedEventArgs e)
         {
@@ -324,17 +305,10 @@ namespace WpfTest
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             loadImage();
-            displayImageOnScreen();
             init_Panels();
           
         }
-
         
-        private void LvlName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
 
         public void Gomme_Clicked(Object sender, MouseEventArgs e)
         {
@@ -353,8 +327,15 @@ namespace WpfTest
 
         public void Fantome_Clicked(Object sender, MouseEventArgs e)
         {
-            penColor = System.Windows.Media.Color.FromArgb(255, 100, 100, 100);
+            penColor = System.Windows.Media.Color.FromArgb(255, 0, 255, 0);
         }
+
+        public void Joueur_Clicked(Object sender, MouseEventArgs e)
+        {
+            penColor = System.Windows.Media.Color.FromArgb(255, 255, 0, 0);
+        }
+
+        
 
     }
 

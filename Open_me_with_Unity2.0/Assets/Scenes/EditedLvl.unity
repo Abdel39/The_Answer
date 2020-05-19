@@ -559,14 +559,15 @@ MonoBehaviour:
   map: {fileID: 2800000, guid: a5b3f87e96e02234cafecb4e90f22123, type: 3}
   colorMappings:
   - color: {r: 0, g: 0, b: 0, a: 1}
-    prefab: {fileID: 3084212888273800993, guid: e6d4c0c303ec16346b09a439e35a981b,
+    prefab: {fileID: 4969298961524748846, guid: e6d4c0c303ec16346b09a439e35a981b,
       type: 3}
   - color: {r: 0, g: 0, b: 1, a: 1}
-    prefab: {fileID: 7660048074620370150, guid: a3cf9b7818dc97f4583187c9b181d20e,
+    prefab: {fileID: 2651311626150211984, guid: a3cf9b7818dc97f4583187c9b181d20e,
       type: 3}
-  - color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
-    prefab: {fileID: 1540127267872595498, guid: 445aa7ccec51d334db5439221e330a23,
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    prefab: {fileID: 4898335283795448581, guid: 445aa7ccec51d334db5439221e330a23,
       type: 3}
+  player: {fileID: 1094478744}
   dropdown: {fileID: 0}
   fromEditedScene: 1
 --- !u!1 &767783208
@@ -796,8 +797,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
-    newSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.48, y: 0.33}
+    newSize: {x: 0.000004, y: 0.000004}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -842,12 +843,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 38acff38534cd3e40904124552bac426, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.010702133, a: 1}
+  m_Sprite: {fileID: 21300000, guid: eb446fe3221430440a9977d6a81b336b, type: 3}
+  m_Color: {r: 0.5188679, g: 0.33812883, b: 0.0465023, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.000004, y: 0.000004}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

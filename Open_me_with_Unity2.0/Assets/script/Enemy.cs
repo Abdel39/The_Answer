@@ -30,11 +30,13 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int dammage, bool isinv=true)
     {
-        caméra.ShakeElapsedTime = caméra.ShakeDuration;
+        if (caméra!=null)
+            caméra.ShakeElapsedTime = caméra.ShakeDuration;
         
         if (isinvulnerable&& isinv)
             return;
-        caméra.ShakeElapsedTime = caméra.ShakeDuration;
+        if (caméra != null)
+            caméra.ShakeElapsedTime = caméra.ShakeDuration;
         
         if (isinvulnerable&&isinv)
             return;

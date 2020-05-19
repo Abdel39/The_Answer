@@ -7,13 +7,14 @@ using UnityEngine;
 using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using System.Security.Cryptography;
 
 public class LevelGenerator : MonoBehaviour
 {
 
     public Texture2D map;
     public ColorToPrefab[] colorMappings;
+    public Transform player;
 
 
 
@@ -43,34 +44,38 @@ public class LevelGenerator : MonoBehaviour
 
     private void InitDropDown()
     {
-        Debug.Log("j init ma dropdown");
-
-        string path = Application.dataPath + @"/lvlEditor/";
-
-        string[] my_list = Directory.GetFiles(path);
-
-        foreach (string item in my_list)
+        if (dropdown != null)
         {
-            FileInfo fileInfo = new FileInfo(item);
+            Debug.Log("j init ma dropdown");
+
+            string path = Application.dataPath + @"/lvlEditor/";
+
+            string[] my_list = Directory.GetFiles(path);
+
+            foreach (string item in my_list)
+            {
+                FileInfo fileInfo = new FileInfo(item);
 
 
-            int longueur = fileInfo.Name.Length;
+                int longueur = fileInfo.Name.Length;
 
-            Debug.Log("j ai : " + fileInfo.Name.Substring(0, longueur - 4));
+                Debug.Log("j ai : " + fileInfo.Name.Substring(0, longueur - 4));
 
 
-            listLvl.Add(fileInfo.Name.Substring(0, longueur - 4));
+                listLvl.Add(fileInfo.Name.Substring(0, longueur - 4));
+            }
+
+
+            dropdown.AddOptions(listLvl);
+
+            Debug.Log("je les ai ajouté a ma liste et a ma drop box");
+
+            if (listLvl.Count > 0)
+            {
+                my_path = Application.dataPath + @"/lvlEditor/" + listLvl[0] + ".png";
+            }
         }
-
-
-        dropdown.AddOptions(listLvl);
-
-        Debug.Log("je les ai ajouté a ma liste et a ma drop box");
-
-        if (listLvl.Count > 0)
-        {
-            my_path = Application.dataPath + @"/lvlEditor/" + listLvl[0] + ".png";
-        }
+       
 
 
     }
@@ -135,6 +140,10 @@ public class LevelGenerator : MonoBehaviour
         {
             // le pixel est transparent ou blanc donc on fait rien
             return;
+        }
+        if (pixelColor.r == 255 && pixelColor.b == 0 && pixelColor.g == 0 && player !=null)
+        {
+            player.position = new Vector2(x, y);
         }
 
         foreach (ColorToPrefab colorMapping in colorMappings)
