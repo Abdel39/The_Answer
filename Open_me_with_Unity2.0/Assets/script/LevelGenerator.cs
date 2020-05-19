@@ -110,7 +110,7 @@ public class LevelGenerator : MonoBehaviour
             Debug.Log("son path : " + my_path);
             byte[] photoInBytes = File.ReadAllBytes(my_path);
             bool mapAvaiable = map.LoadImage(photoInBytes);
-            Debug.Log("j ai une erreur : " + mapAvaiable);
+            Debug.Log("j ai une erreur : " + !mapAvaiable);
         }
         else
         {
@@ -133,21 +133,26 @@ public class LevelGenerator : MonoBehaviour
                 GenerateTile(x, y);
             }
         }
+       
     }
 
     private void GenerateTile(int x, int y)
     {
         Color pixelColor = map.GetPixel(x, y);
 
+        if (pixelColor.Equals(new Color(1, 0, 0)) || pixelColor.Equals(new Color(255, 0, 0)) && player!=null)
+        {
+            Debug.Log("je deplace mercure a la position : x :" + x + ", y:" + y);
+            player.position = new Vector2(x, y);
+        }
+
+
         if (pixelColor.a == 0 || pixelColor.Equals(new Color(255, 255, 255)))
         {
             // le pixel est transparent ou blanc donc on fait rien
             return;
         }
-        if (pixelColor.r == 255 && pixelColor.b == 0 && pixelColor.g == 0 && player !=null)
-        {
-            player.position = new Vector2(x, y);
-        }
+        
 
         foreach (ColorToPrefab colorMapping in colorMappings)
         {
@@ -157,8 +162,14 @@ public class LevelGenerator : MonoBehaviour
                 // donc on creer l element associé
                 Vector2 position = new Vector2(x, y);
                 Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
+               
+                return;
             }
+           
         }
+       
+        
+        
     }
 
 }
