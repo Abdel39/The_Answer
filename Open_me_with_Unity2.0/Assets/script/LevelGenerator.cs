@@ -58,11 +58,14 @@ public class LevelGenerator : MonoBehaviour
 
 
                 int longueur = fileInfo.Name.Length;
+                if (fileInfo.Extension == ".png")
+                {
+                    Debug.Log("j ai : " + fileInfo.Name.Substring(0, longueur - 4));
 
-                Debug.Log("j ai : " + fileInfo.Name.Substring(0, longueur - 4));
 
-
-                listLvl.Add(fileInfo.Name.Substring(0, longueur - 4));
+                    listLvl.Add(fileInfo.Name.Substring(0, longueur - 4));
+                }
+              
             }
 
 
