@@ -109,7 +109,7 @@ namespace WpfTest
             else
             {
                 string currentPath = Directory.GetCurrentDirectory();
-                string fullPath = currentPath + @"\" + imageName + ".png";
+                string fullPath = currentPath + @"\"+"The Answer_Data"+ @"\" + "lvlEditor"+ @"\" + imageName + ".png";
                 image1.Save(fullPath);
 
                 System.Windows.Application.Current.Shutdown();// arrete le programme 
