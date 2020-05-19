@@ -14,4 +14,13 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void LauchLevelEditor()
+    {
+        string my_path = Application.dataPath + @"/lvlEditor/" + "editeur_de_niveau.exe";
+
+        System.Diagnostics.Process.Start(my_path);
+
+      
+    }
 }

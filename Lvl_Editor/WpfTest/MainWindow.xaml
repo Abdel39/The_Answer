@@ -26,6 +26,7 @@
                     <RowDefinition Height="10*"/>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="10*"/>
+                    <RowDefinition Height="4*"/>
                     <RowDefinition Height="10*"/>
                 </Grid.RowDefinitions>
 
@@ -43,7 +44,12 @@
                 <TextBlock  MouseDown="Fantome_Clicked" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="6" Text="Fantome"/>
                 <Image Margin="0,5,0,5" MouseDown="Fantome_Clicked"  Grid.Row="7"  Source="fantome_image.png"/>
 
-                
+                <TextBlock  MouseDown="Joueur_Clicked" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="8" Text="Joueur"/>
+                <Image Margin="0,5,0,5" MouseDown="Joueur_Clicked"  Grid.Row="9"  Source="drapeau.png"/>
+
+
+
+
 
 
             </Grid>
@@ -61,7 +67,7 @@
                 
                 <StackPanel>
                     <TextBlock Text="The Level Name : " Padding="4" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBox Margin="0,0,20,0" Grid.Row ="0" x:Name="lvlName" Padding="3" TextChanged="LvlName_TextChanged" />
+                    <TextBox Margin="0,0,20,0" Grid.Row ="0" x:Name="lvlName" Padding="3" />
                 </StackPanel>
             
 

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("default_image.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("drapeau.png")]
 
 
