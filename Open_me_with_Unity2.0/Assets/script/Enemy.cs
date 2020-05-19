@@ -23,9 +23,6 @@ public class Enemy : MonoBehaviour
         {
             Destroy(GameObject.Find(this.name));
         }
-
-
-        
     }
 
     public void TakeDamage(int dammage, bool isinv=true)

@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class spawn_spectre_2 : MonoBehaviour
 {
-    
     private ParticleSystem spawn;
 
     private bool vaspawn = true;
+    public float décal;
     
-    private GameObject fantomepref;
+    public GameObject fantomepref;
     // Start is called before the first frame update
     void Start()
     {
-        fantomepref = GameObject.Find("Phantom");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (vaspawn == true)
+        
+        if (vaspawn)
         {
             StartCoroutine(spawnéclair());
         }
@@ -28,13 +29,13 @@ public class spawn_spectre_2 : MonoBehaviour
     private  IEnumerator spawnéclair()
     {
         vaspawn = false;
-        yield return new WaitForSeconds(7f);
-        if (GameObject.Find("éclair(Clone)") == false)
-        {
-            GameObject.Instantiate(fantomepref);
-            vaspawn = false;
-        }
+        yield return new WaitForSeconds(7f + décal);
+        
+        GameObject.Instantiate(fantomepref);
+        
+        vaspawn = false;
         fantomepref.transform.position = this.transform.position;
+        décal = 0;
         vaspawn = true;
     }
 }
