@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\thepl\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\thepl\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Open_me_with_Unity2.0.-1247442827.00" t="ExcludeRecursive" />
-    <e p="D:\AAAAAAAAAthe awnser\The_Answerrep\Open_me_with_Unity2.0" t="IncludeRecursive">
+    <e p="C:\Users\sambo\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\sambo\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Open_me_with_Unity2.0.1049698348.00" t="ExcludeRecursive" />
+    <e p="C:\Users\sambo\OneDrive\Bureau\The_Answerrep\Open_me_with_Unity2.0" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="menu" t="Include">
@@ -95,13 +95,12 @@
           <e p="bingbong.cs" t="Include" />
           <e p="BlueBall.cs" t="Include" />
           <e p="BlueCanon.cs" t="Include" />
-          <e p="CameraShake.cs" t="Include" />
+          <e p="Boss_fantome.cs" t="Include" />
           <e p="Canon.cs" t="Include" />
           <e p="canon_balls.cs" t="Include" />
           <e p="changerLesTouches.cs" t="Include" />
           <e p="check.cs" t="Include" />
           <e p="ColorToPrefab.cs" t="Include" />
-          <e p="deplacement.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="follow.cs" t="Include" />
           <e p="handeycooridination.cs" t="Include" />
@@ -115,23 +114,31 @@
           <e p="Mars_bihavior.cs" t="Include" />
           <e p="PauseMenu.cs" t="Include" />
           <e p="phantomscript_boss.cs" t="Include" />
-          <e p="Player_Attack.cs" t="Include" />
-          <e p="PlayerMotor.cs" t="Include" />
           <e p="playermoves.cs" t="Include" />
           <e p="PoseidonDestreoy.cs" t="Include" />
           <e p="poseidons_bihavior.cs" t="Include" />
-          <e p="Pyke.cs" t="Include" />
           <e p="redashS.cs" t="Include" />
           <e p="rejumpS.cs" t="Include" />
           <e p="respearS.cs" t="Include" />
+          <e p="Sam" t="Include">
+            <e p="blue.cs" t="Include" />
+            <e p="CameraShake.cs" t="Include" />
+            <e p="deplacement.cs" t="Include" />
+            <e p="flipswitch.cs" t="Include" />
+            <e p="Player_Attack.cs" t="Include" />
+            <e p="PlayerMotor.cs" t="Include" />
+            <e p="Pyke.cs" t="Include" />
+            <e p="Red.cs" t="Include" />
+            <e p="Spear.cs" t="Include" />
+            <e p="switch.cs" t="Include" />
+            <e p="teleporteur.cs" t="Include" />
+            <e p="Tpchronos.cs" t="Include" />
+            <e p="Weapon.cs" t="Include" />
+          </e>
           <e p="settingMenu.cs" t="Include" />
           <e p="spawn_spectre_1.cs" t="Include" />
           <e p="spawn_spectre_2.cs" t="Include" />
-          <e p="Spear.cs" t="Include" />
           <e p="startMenuScene.cs" t="Include" />
-          <e p="teleporteur.cs" t="Include" />
-          <e p="Tpchronos.cs" t="Include" />
-          <e p="Weapon.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
