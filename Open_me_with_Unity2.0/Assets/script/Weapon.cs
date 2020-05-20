@@ -14,19 +14,41 @@ public class Weapon : MonoBehaviour
     public Transform FirePoint;
 
     public GameObject SpearSpawn;
+    private int time = 3500;
     
     public bool Istouch = false;
     private Collider2D test;
     public bool HaveSpear;
     public Animator _animator;
+    
     void Update()
     {
+        if (!HaveSpear )
+        {
+            time -= 1;
+        }
+
+        if (HaveSpear)
+        {
+            time = 3500;
+        }
+        
+        if (time<0)
+        {
+            time = 3500;
+            HaveSpear = true;
+
+        }
+        
+        
         // avoir la lance et presser le bouton
         if (HaveSpear && Input.GetButtonDown("Fire3"))
         {
          // tirer
          HaveSpear = false;
         Spears();
+
+        
         
 
         }
