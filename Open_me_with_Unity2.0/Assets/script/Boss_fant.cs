@@ -15,11 +15,19 @@ public class Boss_fant : MonoBehaviour
     public GameObject fantomepref;
     public GameObject fantomepref2;
 
+    public GameObject hero;
+    
+    private List<Vector3> teleport = new List<Vector3>(4);
+
     public Enemy Boss;
     // Start is called before the first frame update
     void Start()
     {
-        
+        teleport.Add(new Vector3(-12, -7));
+        teleport.Add(new Vector3(12, -7));
+        teleport.Add(new Vector3(-11, 0));
+        teleport.Add(new Vector3(11, 0));
+        teleport.Add(new Vector3(0, 7));
     }
 
     // Update is called once per frame
@@ -30,14 +38,14 @@ public class Boss_fant : MonoBehaviour
             if (!effetspawn.gameObject.GetComponent<ParticleSystem>().enableEmission)
             {
                 start = true;
-                this.transform.position = new Vector3(-12, -7);
+                this.transform.position = teleport[Random.Range(0, 4)];
             }
         }
         else
         {
             if (effect1)
             {
-                Boss.isinvulnerable = true;
+                Boss.isinvulnerable = false;
                 effetspawn.gameObject.GetComponent<ParticleSystem>().enableEmission = true;
                 if (vaspawn)
                 {
@@ -61,18 +69,26 @@ public class Boss_fant : MonoBehaviour
         yield return new WaitForSeconds(3f);
         effect1 = true;
         vaattendre = true;
+        this.transform.position = teleport[Random.Range(0, 4)];
     }
-    
-    private  IEnumerator spawnfant()
+
+    private IEnumerator spawnfant()
     {
         vaspawn = false;
         yield return new WaitForSeconds(3f);
-        
-        fantomepref.transform.position = this.transform.position + new Vector3(5, 1);
+        if (hero.transform.position.x > this.transform.position.x)
+        {
+            fantomepref.transform.position = this.transform.position + new Vector3(3, 0);
+        }
+        else
+        {
+            fantomepref.transform.position = this.transform.position + new Vector3(-3, 0);
+        }
+
         GameObject.Instantiate(fantomepref);
         effetspawn.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
 
-        Boss.isinvulnerable = false;
+        Boss.isinvulnerable = true;
         effect1 = false;
         vaspawn = true;
     }
