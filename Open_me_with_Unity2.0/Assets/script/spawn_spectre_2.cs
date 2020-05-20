@@ -9,6 +9,9 @@ public class spawn_spectre_2 : MonoBehaviour
     private bool vaspawn = true;
     public float décal;
     
+    private int nbspawn = -1;
+    public int maxspawn;
+    
     public GameObject fantomepref;
     // Start is called before the first frame update
     void Start()
@@ -20,9 +23,15 @@ public class spawn_spectre_2 : MonoBehaviour
     void Update()
     {
         
-        if (vaspawn)
+        if (vaspawn && nbspawn <= maxspawn)
         {
             StartCoroutine(spawnéclair());
+            nbspawn += 1;
+        }
+
+        if (nbspawn >= maxspawn)
+        {
+            Destroy(this.gameObject);
         }
     }
     

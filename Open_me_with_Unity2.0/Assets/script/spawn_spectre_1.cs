@@ -5,8 +5,10 @@ using UnityEngine;
 public class spawn_spectre_1 : MonoBehaviour
 {
     private ParticleSystem spawn;
-
     private bool vaspawn = true;
+    
+    private int nbspawn = -1;
+    public int maxspawn;
 
     public GameObject fantomepref;
     // Start is called before the first frame update
@@ -18,9 +20,14 @@ public class spawn_spectre_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vaspawn)
+        if (vaspawn && nbspawn <= maxspawn)
         {
             StartCoroutine(spawnéclair());
+            nbspawn += 1;
+        }
+        if (nbspawn >= maxspawn)
+        {
+            Destroy(this.gameObject);
         }
     }
     
