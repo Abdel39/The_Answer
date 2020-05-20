@@ -7,7 +7,7 @@ public class spawn_spectre_1 : MonoBehaviour
     private ParticleSystem spawn;
     private bool vaspawn = true;
     
-    private int nbspawn = -1;
+    private int nbspawn = 0;
     public int maxspawn;
 
     public GameObject fantomepref;
@@ -25,9 +25,9 @@ public class spawn_spectre_1 : MonoBehaviour
             StartCoroutine(spawnéclair());
             nbspawn += 1;
         }
-        if (nbspawn >= maxspawn)
+        else if (nbspawn > maxspawn)
         {
-            Destroy(this.gameObject);
+            gameObject.GetComponent<ParticleSystem>().enableEmission = false;
         }
     }
     
@@ -35,11 +35,12 @@ public class spawn_spectre_1 : MonoBehaviour
     {
         vaspawn = false;
         yield return new WaitForSeconds(7f);
-        fantomepref.transform.position = this.transform.position;
-        GameObject.Instantiate(fantomepref);
-        
-        vaspawn = false;
-            
+        if (gameObject.GetComponent<ParticleSystem>().enableEmission)
+        {
+            fantomepref.transform.position = this.transform.position;
+            GameObject.Instantiate(fantomepref);
+        }
+
         vaspawn = true;
     }
 }
