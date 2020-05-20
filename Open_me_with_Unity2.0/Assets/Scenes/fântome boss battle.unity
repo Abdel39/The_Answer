@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 168798617}
   - component: {fileID: 168798616}
   - component: {fileID: 168798618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ptdr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,6 +318,7 @@ MonoBehaviour:
     type: 3}
   fantomepref2: {fileID: 442871637006558507, guid: e211fabe5cdcf874897705dc59fda67f,
     type: 3}
+  Boss: {fileID: 168798617}
 --- !u!61 &168798616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -359,7 +360,7 @@ MonoBehaviour:
   hp: 10
   IsAlive: 1
   isinvulnerable: 0
-  "cam\xE9ra": {fileID: 0}
+  "cam\xE9ra": {fileID: 1451804712}
   hurtbox: {fileID: 0}
 --- !u!50 &168798618
 Rigidbody2D:
@@ -381,7 +382,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &199208888 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4880748177721522809, guid: e9d1f802c557a304cb155573bd4e0eb2,
@@ -5608,7 +5609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0166a0174d1314d99e8fc832e39ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxspawn: 2
+  maxspawn: 1
   fantomepref: {fileID: 442871637006558507, guid: e211fabe5cdcf874897705dc59fda67f,
     type: 3}
 --- !u!1 &1051507521
@@ -10554,7 +10555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "d\xE9cal": 3.5
-  maxspawn: 2
+  maxspawn: 1
   boss: {fileID: 168798611}
   fantomepref: {fileID: 442871637006558507, guid: e211fabe5cdcf874897705dc59fda67f,
     type: 3}
@@ -10684,6 +10685,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1451804712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4368111961172199278, guid: d8705b8002c3c40488c8801cdd91addc,
+    type: 3}
+  m_PrefabInstance: {fileID: 347153181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11887ea1d8f6e474ea35b019b15e35a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1519040221
 GameObject:
   m_ObjectHideFlags: 3
@@ -11718,6 +11731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880748177721522805, guid: e9d1f802c557a304cb155573bd4e0eb2,
+        type: 3}
+      propertyPath: lifePoint
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4880748177721522808, guid: e9d1f802c557a304cb155573bd4e0eb2,
         type: 3}

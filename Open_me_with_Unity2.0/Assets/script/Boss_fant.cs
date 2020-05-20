@@ -5,7 +5,8 @@ using UnityEngine;
 public class Boss_fant : MonoBehaviour
 {
     private bool start = false;
-    
+
+    private bool vaattendre = true;
     private bool vaspawn = true;
     private bool effect1 = true;
 
@@ -13,6 +14,8 @@ public class Boss_fant : MonoBehaviour
     
     public GameObject fantomepref;
     public GameObject fantomepref2;
+
+    public Enemy Boss;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,26 +37,43 @@ public class Boss_fant : MonoBehaviour
         {
             if (effect1)
             {
-                spawnfant();
-                effect1 = false;
+                Boss.isinvulnerable = true;
+                effetspawn.gameObject.GetComponent<ParticleSystem>().enableEmission = true;
+                if (vaspawn)
+                {
+                    StartCoroutine(spawnfant());
+                }
+            }
+            else
+            {
+                effetspawn.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
+                if (vaattendre)
+                {
+                    StartCoroutine(attend());
+                }
             }
         }
     }
-    
-    
+
+    private IEnumerator attend()
+    {
+        vaattendre = false;
+        yield return new WaitForSeconds(3f);
+        effect1 = true;
+        vaattendre = true;
+    }
     
     private  IEnumerator spawnfant()
     {
-        effetspawn.gameObject.GetComponent<ParticleSystem>().enableEmission = true;
         vaspawn = false;
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(3f);
         
-        fantomepref.transform.position = new Vector3(-12, 1);
+        fantomepref.transform.position = this.transform.position + new Vector3(5, 1);
         GameObject.Instantiate(fantomepref);
-
         effetspawn.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
-        
-        vaspawn = false;
+
+        Boss.isinvulnerable = false;
+        effect1 = false;
         vaspawn = true;
     }
 }

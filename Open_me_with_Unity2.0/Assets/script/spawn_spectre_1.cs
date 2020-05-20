@@ -23,7 +23,6 @@ public class spawn_spectre_1 : MonoBehaviour
         if (vaspawn && nbspawn <= maxspawn)
         {
             StartCoroutine(spawnéclair());
-            nbspawn += 1;
         }
         else if (nbspawn > maxspawn)
         {
@@ -40,7 +39,8 @@ public class spawn_spectre_1 : MonoBehaviour
             fantomepref.transform.position = this.transform.position;
             GameObject.Instantiate(fantomepref);
         }
-
+        
+        nbspawn += 1;
         vaspawn = true;
     }
 }

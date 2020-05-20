@@ -25,14 +25,13 @@ public class spawn_spectre_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bosson)
+        if (bosson && boss != null)
         {
             this.transform.position = boss.transform.position;
         }
         else if (vaspawn && nbspawn <= maxspawn)
         {
             StartCoroutine(spawnéclair());
-            nbspawn += 1;
         }
         else if (nbspawn > maxspawn)
         {
@@ -51,6 +50,7 @@ public class spawn_spectre_2 : MonoBehaviour
             GameObject.Instantiate(fantomepref);
         }
         
+        nbspawn += 1;
         décal = 0;
         vaspawn = true;
     }
