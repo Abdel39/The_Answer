@@ -95,7 +95,12 @@
           <e p="bingbong.cs" t="Include" />
           <e p="BlueBall.cs" t="Include" />
           <e p="BlueCanon.cs" t="Include" />
+<<<<<<< HEAD
           <e p="Boss_fantome.cs" t="Include" />
+=======
+          <e p="Boss_fant.cs" t="Include" />
+          <e p="CameraShake.cs" t="Include" />
+>>>>>>> 6c685f9e8e7609b62e84e50452b354e312d40afb
           <e p="Canon.cs" t="Include" />
           <e p="canon_balls.cs" t="Include" />
           <e p="changerLesTouches.cs" t="Include" />
