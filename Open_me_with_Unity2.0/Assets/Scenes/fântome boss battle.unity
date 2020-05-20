@@ -10601,11 +10601,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1451804712 stripped
+--- !u!114 &1451804712
 MonoBehaviour:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 4368111961172199278, guid: d8705b8002c3c40488c8801cdd91addc,
     type: 3}
-  m_PrefabInstance: {fileID: 347153181}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -10613,6 +10614,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11887ea1d8f6e474ea35b019b15e35a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShakeDuration: 0.3
+  ShakeAmplitude: 1.2
+  ShakeFrequency: 2
+  ShakeElapsedTime: 0
+  player: {fileID: 0}
+  VirtualCamera: {fileID: 0}
 --- !u!1 &1519040221
 GameObject:
   m_ObjectHideFlags: 3
@@ -11028,7 +11035,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682232569}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.39878, y: 2.777841, z: -14.825616}
+  m_LocalPosition: {x: 1.3987802, y: 2.777841, z: -14.825616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1519040222}
@@ -11141,7 +11148,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a92ab633ab7e6ae4c959b1b1a5e4894d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 47dea420ec1430243a8c628cda1e1686, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.265
   m_Pitch: 1
@@ -11927,7 +11934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089476000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07999928, y: 1.478333, z: -14.904786}
+  m_LocalPosition: {x: 0.07999958, y: 1.478333, z: -14.904786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1881558897}
