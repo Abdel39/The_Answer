@@ -39,11 +39,11 @@ public class spawn_spectre_2 : MonoBehaviour
     {
         vaspawn = false;
         yield return new WaitForSeconds(7f + décal);
-        
+        fantomepref.transform.position = this.transform.position;
         GameObject.Instantiate(fantomepref);
         
         vaspawn = false;
-        fantomepref.transform.position = this.transform.position;
+        
         décal = 0;
         vaspawn = true;
     }
