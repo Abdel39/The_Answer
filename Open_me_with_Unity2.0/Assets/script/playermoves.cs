@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(PlayerMotor))]
 public class playermoves : MonoBehaviour
 {
-    private int lifePoint = 3;
+    public int lifePoint = 3;
     private int invincibility = 30;
     
     private Rigidbody2D body;
