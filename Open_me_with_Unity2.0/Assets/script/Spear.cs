@@ -14,10 +14,13 @@ public class Spear : MonoBehaviour
     public int dammage = 15;
     public float Times;
     public float startTime;
+   
+    
     
 
     void Start()
     {
+        
         Times = startTime;
         body.velocity = transform.right * SpeedSpear;
         
@@ -27,7 +30,12 @@ public class Spear : MonoBehaviour
     void OnTriggerEnter2D(Collider2D info)
     {
         Enemy enemy = info.GetComponent<Enemy>();
-        
+        Pyke pike = info.GetComponent<Pyke>();
+
+        if (pike!= null)
+        {
+            Destroy(gameObject);
+        }
         if (enemy!=null)
         {
             
@@ -35,6 +43,7 @@ public class Spear : MonoBehaviour
             
           //  Destroy(gameObject);
         }
+        
         else
         {
             

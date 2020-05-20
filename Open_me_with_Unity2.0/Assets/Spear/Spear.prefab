@@ -138,6 +138,7 @@ MonoBehaviour:
   dammage: 1
   Times: 0
   startTime: 1
+  perso: {fileID: 1781176313184135275, guid: d497ce60b4e26204f98fa37477e9343f, type: 3}
 --- !u!61 &6950191537980107574
 BoxCollider2D:
   m_ObjectHideFlags: 0

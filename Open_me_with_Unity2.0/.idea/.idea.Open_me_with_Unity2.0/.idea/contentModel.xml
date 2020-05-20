@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\thepl\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\thepl\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Open_me_with_Unity2.0.-1247442827.00" t="ExcludeRecursive" />
-    <e p="D:\AAAAAAAAAthe awnser\The_Answerrep\Open_me_with_Unity2.0" t="IncludeRecursive">
+    <e p="C:\Users\sambo\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\sambo\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Open_me_with_Unity2.0.1049698348.00" t="ExcludeRecursive" />
+    <e p="C:\Users\sambo\OneDrive\Bureau\The_Answerrep\Open_me_with_Unity2.0" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="menu" t="Include">
@@ -126,6 +126,7 @@
           <e p="Spear.cs" t="Include" />
           <e p="startMenuScene.cs" t="Include" />
           <e p="teleporteur.cs" t="Include" />
+          <e p="Tpchronos.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
         </e>
       </e>
