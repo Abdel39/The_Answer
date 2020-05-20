@@ -11742,7 +11742,7 @@ PrefabInstance:
     - target: {fileID: 4880748177721522805, guid: e9d1f802c557a304cb155573bd4e0eb2,
         type: 3}
       propertyPath: lifePoint
-      value: 100
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4880748177721522808, guid: e9d1f802c557a304cb155573bd4e0eb2,
         type: 3}
