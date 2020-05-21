@@ -13,17 +13,32 @@ public class poseidons_bihavior : MonoBehaviour
     private int cooldown;
     private Rigidbody2D rb;
     private Transform player;
+    private playermoves pm;
+    public Rigidbody2D prb;
 
     public Animator Animator;
     public deplacement Deplacement;
 
-    private int lazer = 3;
+    private int lazer = 5;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("player").transform;
+        pm = player.GetComponent<playermoves>();
         rb=GetComponent<Rigidbody2D>();
         cooldown = cool;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        string n = other.tag;
+        if (n == "player")
+        {
+            pm.TakeDamage(1);
+            Debug.Log("nono");
+            prb.AddForce(Vector2.up*200);
+            prb.AddForce(Vector2.right*10000);
+        }
     }
 
     // Update is called once per frame
@@ -74,8 +89,12 @@ public class poseidons_bihavior : MonoBehaviour
 
     public void Move()
     {
-        float y = player.position.y - rb.position.y-0.5f;
-        rb.velocity =new Vector2(0,10*y/10);
+        float a = rb.position.y;
+        float y = player.position.y - a-0.5f;
+        if (y<0 && a<=-6)
+            rb.velocity =Vector2.zero;
+        else
+            rb.velocity =new Vector2(0,y);
     }
         
 

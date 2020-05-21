@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 
 public class Canon : MonoBehaviour
 {
     public GameObject ball;
-
+    public int turn = 1;
+    public int upside = 1;
     public int interval;
     private int clock;
 
@@ -21,7 +23,7 @@ public class Canon : MonoBehaviour
     private void Start()
     {
         clock = interval;
-        pos = new Vector3(-0.19f, 0.16f, -0.1f);
+        pos = new Vector3(-0.19f*turn, 0.16f*upside, -0.1f);
         pos += (Vector3) rb.position;
         quat = new Quaternion(0f, 0f, 0f, 0f);
     }
@@ -35,7 +37,8 @@ public class Canon : MonoBehaviour
         if (clock == 0)
         {
             clock = interval;
-            Instantiate(ball,pos, quat);
+            GameObject i=Instantiate(ball,pos, quat);
+            i.GetComponent<Rigidbody2D>().velocity=new Vector2(-turn*10,upside*10);
         }
 
         clock--;
