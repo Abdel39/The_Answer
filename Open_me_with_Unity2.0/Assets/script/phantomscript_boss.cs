@@ -64,17 +64,17 @@ public class phantomscript_boss : MonoBehaviour
         }
 
         
-        if (positionperso.y - 0.5 < position.y && positionperso.y + 0.5 > position.y) 
+        if (positionperso.y - 0.8 < position.y && positionperso.y + 0.8 > position.y) 
         { 
             fasty = 0;
         }
         else if (positionperso.y < position.y) 
         { 
-            fasty = -4;
+            fasty = -7;
         }
         else
         {
-            fasty = 4;
+            fasty = 7;
         }
         Vector3 move = new Vector3(fastx, fasty, 0);
         phantom.velocity = move;

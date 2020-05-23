@@ -74,11 +74,11 @@ public class Phantomscript : MonoBehaviour
             }
             else if (positionperso.y < position.y)
             {
-                fasty = -4;
+                fasty = -7;
             }
             else
             {
-                fasty = 4;
+                fasty = 7;
             }
 
             Vector3 move = new Vector3(fastx, fasty, 0);
