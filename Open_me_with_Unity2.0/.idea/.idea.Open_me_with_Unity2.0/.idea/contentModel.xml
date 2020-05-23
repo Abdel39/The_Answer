@@ -79,24 +79,11 @@
             </e>
           </e>
         </e>
-        <e p="Méchant" t="Include">
-          <e p="cochon" t="Include">
-            <e p="cochonscript.cs" t="Include" />
-          </e>
-          <e p="nuage" t="Include">
-            <e p="attdist.cs" t="Include" />
-            <e p="élcair.cs" t="Include" />
-          </e>
-          <e p="phatom" t="Include">
-            <e p="Phantomscript.cs" t="Include" />
-          </e>
-        </e>
         <e p="script" t="Include">
           <e p="BallS.cs" t="Include" />
           <e p="bingbong.cs" t="Include" />
           <e p="BlueBall.cs" t="Include" />
           <e p="BlueCanon.cs" t="Include" />
-          <e p="Boss_fant.cs" t="Include" />
           <e p="Canon.cs" t="Include" />
           <e p="changerLesTouches.cs" t="Include" />
           <e p="check.cs" t="Include" />
@@ -113,7 +100,6 @@
           <e p="LifeImage.cs" t="Include" />
           <e p="Mars_bihavior.cs" t="Include" />
           <e p="PauseMenu.cs" t="Include" />
-          <e p="phantomscript_boss.cs" t="Include" />
           <e p="playermoves.cs" t="Include" />
           <e p="PoseidonDestreoy.cs" t="Include" />
           <e p="poseidons_bihavior.cs" t="Include" />
@@ -136,9 +122,18 @@
             <e p="Weapon.cs" t="Include" />
           </e>
           <e p="settingMenu.cs" t="Include" />
-          <e p="spawn_spectre_1.cs" t="Include" />
-          <e p="spawn_spectre_2.cs" t="Include" />
           <e p="startMenuScene.cs" t="Include" />
+          <e p="val" t="Include">
+            <e p="attdist.cs" t="Include" />
+            <e p="Boss_fant.cs" t="Include" />
+            <e p="cochonscript.cs" t="Include" />
+            <e p="Phantomscript.cs" t="Include" />
+            <e p="phantomscript_boss.cs" t="Include" />
+            <e p="spawn_spectre_1.cs" t="Include" />
+            <e p="spawn_spectre_2.cs" t="Include" />
+            <e p="Zeus_boss.cs" t="Include" />
+            <e p="élcair.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
