@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 2108210716, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
   m_Name: gold_colorGradiant
   m_EditorClassIdentifier: 
-  topLeft: {r: 0.99215686, g: 0.9235316, b: 0.12549017, a: 1}
-  topRight: {r: 0.38679248, g: 0.30305618, b: 0.016420428, a: 1}
-  bottomLeft: {r: 0.735849, g: 0.5598414, b: 0, a: 1}
+  topLeft: {r: 0.9137255, g: 0.65501356, b: 0.047058843, a: 1}
+  topRight: {r: 1, g: 0.53792745, b: 0, a: 1}
+  bottomLeft: {r: 1, g: 0.042452812, b: 0.06140101, a: 1}
   bottomRight: {r: 0, g: 0, b: 0, a: 1}

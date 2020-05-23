@@ -25,6 +25,16 @@ public class LaunchSceneScript : MonoBehaviour
     {
         SceneManager.LoadScene("First level");
     }
+    
+    public void launchSecondLvl()
+    {
+        SceneManager.LoadScene("Second level");
+    }
+    
+    public void backButton()
+    {
+        SceneManager.LoadScene("Menu");
+    }
     public void launchMars()
     {
         SceneManager.LoadScene("Mars boss Battle");
