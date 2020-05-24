@@ -363,6 +363,7 @@ MonoBehaviour:
   IsAlive: 1
   isinvulnerable: 0
   "cam\xE9ra": {fileID: 1451804712}
+  launchVictoryIfKilled: 1
   hurtbox: {fileID: 0}
 --- !u!50 &168798618
 Rigidbody2D:

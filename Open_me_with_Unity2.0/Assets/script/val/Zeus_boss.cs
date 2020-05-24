@@ -33,57 +33,52 @@ public class Zeus_boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // retournement
-        if (perso.transform.position.x - 1.2 < position.x && perso.transform.position.x + 1.2 > position.x)
-        {
-            
-        }
-        else if (perso.transform.position.x < position.x)
-        {
-            if (!retourner)
-            {
-                this.transform.Rotate(rotat);
-                retourner = true;
-            }
-        }
-        else
-        {
-            if (retourner)
-            {
-                this.transform.Rotate(rotat);
-                retourner = false;
-            }
-        }
-        
+        position = phantom.transform.position;
         // déplacement x, y
         if (!Dash)
         {
-            if (perso.transform.position.x - 0.8 < position.x && perso.transform.position.x + 0.8 > position.x)
+            if (perso.transform.position.x - 1.2 < position.x && perso.transform.position.x + 1.2 > position.x)
             {
                 fastx = 0;
             }
             else if (perso.transform.position.x < position.x)
             {
-                fastx = -7;
+                fastx = -5;
+                if (!retourner)
+                {
+                    phantom.transform.Rotate(rotat);
+                    retourner = true;
+                }
             }
             else
             {
-                fastx = 7;
+                fastx = 5;
+                if (retourner)
+                {
+                    phantom.transform.Rotate(rotat);
+                    retourner = false;
+                }
             }
-            
-            if (perso.transform.position.y - 0.8 < position.y && perso.transform.position.y + 0.8 > position.y)
-            {
+
+        
+            if (perso.transform.position.y - 0.8 < position.y && perso.transform.position.y + 0.8 > position.y) 
+            { 
                 fasty = 0;
             }
-            else if (perso.transform.position.y < position.y)
-            {
-                fasty = -7;
+            else if (perso.transform.position.y < position.y) 
+            { 
+                fasty = -5;
             }
             else
             {
-                fasty = 7;
+                fasty = 5;
             }
             Vector3 move = new Vector3(fastx, fasty, 0);
+            phantom.velocity = move;
+        }
+        else
+        {
+            Vector3 move = new Vector3(0, 0, 0);
             phantom.velocity = move;
         }
         
@@ -107,6 +102,7 @@ public class Zeus_boss : MonoBehaviour
     private IEnumerator attend()
     {
         reload = false;
+        Dash = false;
         yield return new WaitForSeconds(4f);
 
         Dashatt = false;
@@ -116,12 +112,13 @@ public class Zeus_boss : MonoBehaviour
     private IEnumerator Dasheffet()
     {
         Dash = true;
-        Vector3 move = new Vector3(0, 0, 0);
-        phantom.velocity = move;
-        
         Dashatt = true;
-        yield return new WaitForSeconds(2f);
-        position.y = perso.transform.position.y;
+        
+        yield return new WaitForSeconds(1f);
+        this.transform.position = new Vector3(this.transform.position.x, perso.transform.position.y);
+        
+        yield return new WaitForSeconds(1f);
+        this.transform.position = new Vector3(perso.transform.position.x, this.transform.position.y);
         
         reload = true;
         Dash = false;
