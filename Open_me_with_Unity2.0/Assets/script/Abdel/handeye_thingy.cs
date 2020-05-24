@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Win32.SafeHandles;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -41,6 +42,8 @@ public class handeye_thingy : MonoBehaviour
     public bool goingup = true;
     
     private Rigidbody2D rb;
+
+    private bool isreturned = false;
 
     public Animator hand;
     public Animator chronos;
@@ -173,6 +176,13 @@ public class handeye_thingy : MonoBehaviour
 
     public void Destroyed()
     {
+        if (Random.Range(1,2)==2)
+        {
+            if (!isreturned)
+            {
+                
+            }
+        }
         switch (whatisdestroyed)
         {
             case 1 :
