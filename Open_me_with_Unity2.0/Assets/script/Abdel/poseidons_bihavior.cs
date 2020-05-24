@@ -20,6 +20,8 @@ public class poseidons_bihavior : MonoBehaviour
     public deplacement Deplacement;
 
     private int lazer = 5;
+
+    public CapsuleCollider2D Collider;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,7 @@ public class poseidons_bihavior : MonoBehaviour
                 if (lazer == 0)
                 {
                     Deplacement.scrol = 0;
+                    Collider.isTrigger=false;
                 }
             }
         }

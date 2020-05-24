@@ -18,7 +18,7 @@ public class BlueBall : MonoBehaviour
         string n = collision.tag;
         if (n == "Ennemies")
         {
-            collision.GetComponent<Collider>().GetComponent<Enemy>().TakeDamage(1,false);
+            collision.GetComponent<Enemy>().TakeDamage(1,false);
         }
 
         if (n == "IsGround")
