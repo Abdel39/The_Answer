@@ -47,5 +47,9 @@ public class LaunchSceneScript : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    public void launchVictory()
+    {
+        SceneManager.LoadScene("victory");
+    }
 
 }

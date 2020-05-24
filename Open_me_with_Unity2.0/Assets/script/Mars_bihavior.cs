@@ -1,8 +1,10 @@
-﻿using System;
+﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.MemoryMappedFiles;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Mars_bihavior : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class Mars_bihavior : MonoBehaviour
     public Animator animator;
     private Vector2 target;
     public float meleing = 0;
+    
 
     public bool hasmele = false;
     // Start is called before the first frame update
@@ -127,5 +130,13 @@ public class Mars_bihavior : MonoBehaviour
             } 
         }
     }
-    
+
+    void OnDestroy()
+    {
+        if (!_enemy.IsAlive)
+        {
+            SceneManager.LoadScene("victory");
+        }
+        
+    }
 }

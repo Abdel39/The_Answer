@@ -27,6 +27,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Hades boss battle.unity
     guid: 64a81bd01f20fc444980236ac226c344
   - enabled: 1
+    path: "Assets/Scenes/f\xE2ntome boss battle.unity"
+    guid: 2a7ce8524e3c8764396857d7095507dc
+  - enabled: 1
+    path: Assets/Scenes/poseidon battle.unity
+    guid: a08e6dc0c00a64a49a013ec08f15f395
+  - enabled: 1
+    path: Assets/Scenes/TEST mapping.unity
+    guid: efe037e010015ac4ba1295f2c2b562d6
+  - enabled: 1
+    path: Assets/Scenes/victory.unity
+    guid: 6f0fb369d0c42824fbc3d4bf8d762e53
+  - enabled: 1
+    path: Assets/Scenes/Zeus boss Battle.unity
+    guid: 63a709e927a9e68449ba34e7dfbef6de
+  - enabled: 1
     path: Assets/Scenes/Mars boss Battle.unity
     guid: 6ec75b10267b1cd40936681a4baf6ddb
   - enabled: 1

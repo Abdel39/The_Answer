@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Enemy : MonoBehaviour
     public bool IsAlive = true;
     public bool isinvulnerable = false;
     public CameraShake caméra;
+    public bool launchVictoryIfKilled = false;
+   
 
     public Transform hurtbox;
     // Start is called before the first frame update
@@ -22,6 +25,11 @@ public class Enemy : MonoBehaviour
         if (!IsAlive)
         {
             Destroy(GameObject.Find(this.name));
+            if (launchVictoryIfKilled)
+            {
+               SceneManager.LoadScene("victory");
+                
+            }
         }
     }
 
