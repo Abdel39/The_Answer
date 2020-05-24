@@ -932,7 +932,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.01, y: -0.12}
-  m_Size: {x: 0.27, y: 0.07}
+  m_Size: {x: 0.34, y: 0.07}
   m_Direction: 1
 --- !u!70 &1094478741
 CapsuleCollider2D:
@@ -1720,7 +1720,7 @@ PrefabInstance:
     - target: {fileID: 7131927518058106567, guid: f572f30380ceff0468edccb995f17239,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.27
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 7131927518058106571, guid: f572f30380ceff0468edccb995f17239,
         type: 3}
