@@ -22,6 +22,9 @@ public class Zeus_boss : MonoBehaviour
     private bool Dashatt = false;
 
     private float test;
+
+    public GameObject laserh;
+    public GameObject laserv;
     // Start is called before the fi
     // Start is called before the first frame update
     void Start()
@@ -113,13 +116,17 @@ public class Zeus_boss : MonoBehaviour
     {
         Dash = true;
         Dashatt = true;
-        
+
+        laserv.transform.position = this.transform.position;
         yield return new WaitForSeconds(1f);
         this.transform.position = new Vector3(this.transform.position.x, perso.transform.position.y);
         
+        laserv.transform.position = new Vector3(-40,0,0);
+        laserh.transform.position = this.transform.position;
         yield return new WaitForSeconds(1f);
         this.transform.position = new Vector3(perso.transform.position.x, this.transform.position.y);
         
+        laserh.transform.position = new Vector3(0, -40, 0);
         reload = true;
         Dash = false;
     }
