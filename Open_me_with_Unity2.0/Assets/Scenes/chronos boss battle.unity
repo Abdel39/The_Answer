@@ -298,7 +298,7 @@ Transform:
   m_GameObject: {fileID: 73243809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.661219, y: 0.05000019, z: -9.904786}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 2136819340}
   m_Father: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 130031083}
   m_Layer: 8
   m_Name: Eyehand
-  m_TagString: Untagged
+  m_TagString: Ennemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -444,6 +444,7 @@ MonoBehaviour:
   plat5: {fileID: 0}
   plat6: {fileID: 0}
   lazor: {fileID: 8373225778732460272, guid: 48a923f33d7cce6469e34c8e96dd0ea6, type: 3}
+  lazor2: {fileID: 8801616440780140242, guid: 2bff57a1155da9446a35e90fac765ab2, type: 3}
   weapon: {fileID: 1094032768}
   isdestroying: -1
   isDestroyed: 0
@@ -765,7 +766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283812181}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -2.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1152229579}
@@ -10654,7 +10655,7 @@ RectTransform:
   m_GameObject: {fileID: 672573653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 2136819340}
   m_RootOrder: 0
@@ -25179,6 +25180,8 @@ GameObject:
   - component: {fileID: 1458693001}
   - component: {fileID: 1458693000}
   - component: {fileID: 1458693002}
+  - component: {fileID: 1458693004}
+  - component: {fileID: 1458693003}
   m_Layer: 0
   m_Name: hand
   m_TagString: Untagged
@@ -25267,6 +25270,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1458693003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458692999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630dd256abfae694abf3dea97e070127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+  IsAlive: 1
+  isinvulnerable: 0
+  "cam\xE9ra": {fileID: 0}
+  launchVictoryIfKilled: 0
+  hurtbox: {fileID: 0}
+--- !u!70 &1458693004
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458692999}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.028421272, y: -0.3279629}
+  m_Size: {x: 1.0360768, y: 0.5664498}
+  m_Direction: 1
 --- !u!1 &1538787371
 GameObject:
   m_ObjectHideFlags: 0

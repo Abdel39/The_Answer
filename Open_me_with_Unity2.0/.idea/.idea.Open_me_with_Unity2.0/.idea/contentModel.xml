@@ -85,8 +85,11 @@
             <e p="bingbong.cs" t="Include" />
             <e p="BlueBall.cs" t="Include" />
             <e p="BlueCanon.cs" t="Include" />
+            <e p="BubbleSwitch.cs" t="Include" />
             <e p="Canon.cs" t="Include" />
             <e p="check.cs" t="Include" />
+            <e p="desactivation.cs" t="Include" />
+            <e p="HadesBihave.cs" t="Include" />
             <e p="handeycooridination.cs" t="Include" />
             <e p="handeye_thingy.cs" t="Include" />
             <e p="heart.cs" t="Include" />
@@ -94,6 +97,7 @@
             <e p="Mars_bihavior.cs" t="Include" />
             <e p="PoseidonDestreoy.cs" t="Include" />
             <e p="poseidons_bihavior.cs" t="Include" />
+            <e p="reactivation.cs" t="Include" />
             <e p="redashS.cs" t="Include" />
             <e p="rejumpS.cs" t="Include" />
             <e p="respearS.cs" t="Include" />

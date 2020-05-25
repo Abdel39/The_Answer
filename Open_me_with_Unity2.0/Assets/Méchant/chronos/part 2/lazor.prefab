@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8373225778732460272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.34, y: -4.79, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   obj: {fileID: 8373225778732460272}
   box: {fileID: 4370940686866279026}
   Enemy: {fileID: 3865680670354208436}
+  speed: -20
 --- !u!114 &3865680670354208436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +116,7 @@ MonoBehaviour:
   isinvulnerable: 1
   "cam\xE9ra": {fileID: 4368111961172199278, guid: d8705b8002c3c40488c8801cdd91addc,
     type: 3}
+  launchVictoryIfKilled: 0
   hurtbox: {fileID: 0}
 --- !u!50 &7565851642282329250
 Rigidbody2D:
@@ -147,7 +149,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.13139075, y: -0.2945942}
