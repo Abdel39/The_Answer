@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,6 +18,12 @@ public class LaunchSceneScript : MonoBehaviour
     {
         
     }
+
+    public void launch3rdLevel()
+    {
+        SceneManager.LoadScene("Third level");
+    }
+   
 
     public void launchEditedLvl()
     {
