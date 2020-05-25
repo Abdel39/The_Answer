@@ -946,7 +946,11 @@ MonoBehaviour:
   m_MaxValue: 1
   m_WholeNumbers: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Value: 0
+=======
+  m_Value: 0.38
+>>>>>>> parent of ff0b86b... volume up
 =======
   m_Value: 0.38
 >>>>>>> parent of ff0b86b... volume up
