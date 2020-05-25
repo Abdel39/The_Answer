@@ -11,8 +11,6 @@ public class Enemy : MonoBehaviour
     public CameraShake caméra;
     public bool launchVictoryIfKilled = false;
 
-    AudioSource audio;
-
     public Transform hurtbox;
     // Start is called before the first frame update
     void Start()
