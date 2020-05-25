@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
+//using TreeEditor;
+//je suis obligé de comment ca out Abdel, sinon je peux pas compiler le projet : " the type or namespace treeEditor could not be find"
 using UnityEngine;
 
 public class Canon : MonoBehaviour
