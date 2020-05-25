@@ -13122,7 +13122,7 @@ PrefabInstance:
     - target: {fileID: 4898335283795448603, guid: 445aa7ccec51d334db5439221e330a23,
         type: 3}
       propertyPath: launchVictoryIfKilled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4898335283795448600, guid: 445aa7ccec51d334db5439221e330a23, type: 3}
