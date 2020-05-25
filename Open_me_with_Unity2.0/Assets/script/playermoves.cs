@@ -85,7 +85,6 @@ public class playermoves : MonoBehaviour
         if (enemy != null)
         {
             TakeDamage(1);
-            audio.Play();
         }
         
         Pyke pike = other.collider.GetComponent<Pyke>();
@@ -102,6 +101,7 @@ public class playermoves : MonoBehaviour
     {
         if (invincibility < 0)
         {
+            audio.Play();
             lifePoint -= damage;
             if (lifePoint <= 0)
             {
