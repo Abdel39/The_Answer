@@ -22,12 +22,9 @@ public class playermoves : MonoBehaviour
     private float y;
     public Animator Animator;
 
-
-    private AudioSource audio;
     private void Start()
     {
         motor = GetComponent<PlayerMotor>();
-        audio = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -101,7 +98,6 @@ public class playermoves : MonoBehaviour
     {
         if (invincibility < 0)
         {
-            audio.Play();
             lifePoint -= damage;
             if (lifePoint <= 0)
             {

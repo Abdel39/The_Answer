@@ -27,8 +27,6 @@ public class Boss_fant : MonoBehaviour
     public Enemy Boss;
 
     public Vector3 positionperso;
-
-    public GameObject protection;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,7 +74,6 @@ public class Boss_fant : MonoBehaviour
             if (effect1)
             {
                 Boss.isinvulnerable = false;
-                protection.transform.position = new Vector3(-40,0,0);
                 effetspawn.gameObject.GetComponent<ParticleSystem>().enableEmission = true;
                 if (vaspawn)
                 {
@@ -129,7 +126,6 @@ public class Boss_fant : MonoBehaviour
         effetspawn.gameObject.GetComponent<ParticleSystem>().enableEmission = false;
 
         Boss.isinvulnerable = true;
-        protection.transform.position = this.transform.position;
         effect1 = false;
         vaspawn = true;
     }
