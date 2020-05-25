@@ -55,9 +55,24 @@ public class LaunchSceneScript : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void launchLevelFour()
+    {
+        
+        SceneManager.LoadScene("levelFour");
+    }
+
     public void launchVictory()
     {
         SceneManager.LoadScene("victory");
     }
+
+
+    public void launchPoseidon()
+    {
+        SceneManager.LoadScene("poseidon battle");
+    }
+
+
 
 }

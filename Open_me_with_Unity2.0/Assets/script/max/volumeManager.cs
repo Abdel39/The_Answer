@@ -29,13 +29,13 @@ public class volumeManager : MonoBehaviour
             
         }
 
-       
-        audioSource.volume = currentVolume;
+        if (audioSource != null)
+            audioSource.volume = currentVolume;
     }
 
     public void setVolumeWithSlider()
     {
-        if (currentVolume >=0f)
+        if (currentVolume >=0f && audioSource!=null)
         {
             currentVolume = slider.value;
             audioSource.volume = currentVolume;

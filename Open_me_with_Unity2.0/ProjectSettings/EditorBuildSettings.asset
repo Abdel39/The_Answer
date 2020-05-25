@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/First level.unity
     guid: 340577c940c2d62438b56cf51e2c44f1
   - enabled: 1
+    path: Assets/Scenes/levelFour.unity
+    guid: 5e2b21d3048228747ada6affdf5c94b6
+  - enabled: 1
     path: Assets/Scenes/Hades boss battle.unity
     guid: 64a81bd01f20fc444980236ac226c344
   - enabled: 1

@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54edd70a61dc5a43a07c8447ffb685f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1027088600}
   slider: {fileID: 1938103735}
   IamSettingSlider: 1
 --- !u!224 &42847868
