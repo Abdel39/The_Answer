@@ -22,9 +22,12 @@ public class playermoves : MonoBehaviour
     private float y;
     public Animator Animator;
 
+
+    private AudioSource audio;
     private void Start()
     {
         motor = GetComponent<PlayerMotor>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -82,6 +85,7 @@ public class playermoves : MonoBehaviour
         if (enemy != null)
         {
             TakeDamage(1);
+            audio.Play();
         }
         
         Pyke pike = other.collider.GetComponent<Pyke>();
