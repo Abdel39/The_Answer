@@ -10546,6 +10546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameIsPaused: 0
   pauseMenuUI: {fileID: 1889141899}
+  optionMenuUI: {fileID: 0}
 --- !u!114 &637389507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24935,7 +24936,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 89585d1eb8f5d80448054462765ba731, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
