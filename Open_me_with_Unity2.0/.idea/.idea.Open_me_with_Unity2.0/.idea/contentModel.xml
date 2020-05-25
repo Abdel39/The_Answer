@@ -107,8 +107,8 @@
             <e p="LevelGenerator.cs" t="Include" />
             <e p="LifeImage.cs" t="Include" />
             <e p="PauseMenu.cs" t="Include" />
-            <e p="settingMenu.cs" t="Include" />
             <e p="startMenuScene.cs" t="Include" />
+            <e p="volumeManager.cs" t="Include" />
           </e>
           <e p="playermoves.cs" t="Include" />
           <e p="Sam" t="Include">
@@ -125,6 +125,7 @@
             <e p="teleporteur.cs" t="Include" />
             <e p="Tpchronos.cs" t="Include" />
             <e p="Tpuranus.cs" t="Include" />
+            <e p="TPZeus.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
           </e>
           <e p="val" t="Include">
