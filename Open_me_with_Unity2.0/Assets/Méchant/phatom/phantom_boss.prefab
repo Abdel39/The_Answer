@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 82572071510602044}
   m_Layer: 8
   m_Name: phantom_boss
-  m_TagString: spear
+  m_TagString: Ennemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

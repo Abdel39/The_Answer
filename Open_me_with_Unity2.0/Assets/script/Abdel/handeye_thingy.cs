@@ -21,6 +21,7 @@ public class handeye_thingy : MonoBehaviour
     public Object plat6;
 
     public Object lazor;
+    public Object lazor2;
     public Weapon weapon;
     public int isdestroying = 0;
     public bool isDestroyed = false;
@@ -175,12 +176,22 @@ public class handeye_thingy : MonoBehaviour
 
     public void Destroyed()
     {
-        if (Random.Range(1,2)==2)
+        if (Random.Range(1,3)==2)
         {
             if (!isreturned)
             {
-                
+                transform.Rotate(0f, 180f, 0f);
             }
+
+            isreturned = true;
+            transform.position=new Vector3(-24f,16);
+        }
+        else
+        {
+            if(isreturned)
+                transform.Rotate(0f, 180f, 0f);
+            isreturned = false;
+            transform.position=new Vector3(11,16);
         }
         switch (whatisdestroyed)
         {
@@ -201,7 +212,10 @@ public class handeye_thingy : MonoBehaviour
 
     public void Lazor()
     {
-        Instantiate(lazor, new Vector3(14f, rb.position.y + 0.2f),new Quaternion(0f,0f,0f,0f));
+        if (!isreturned)
+            Instantiate(lazor, new Vector3(11f, rb.position.y + 0.3f),new Quaternion(0f,0f,0f,0f));
+        else
+            Instantiate(lazor2, new Vector3(-23f, rb.position.y + 0.3f),new Quaternion(0f,0f,0f,0f));
     }
 
     public void Move()

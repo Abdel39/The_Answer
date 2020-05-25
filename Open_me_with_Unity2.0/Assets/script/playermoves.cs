@@ -22,7 +22,6 @@ public class playermoves : MonoBehaviour
     private float y;
     public Animator Animator;
 
-
     private AudioSource audio;
     private void Start()
     {
@@ -101,7 +100,7 @@ public class playermoves : MonoBehaviour
     {
         if (invincibility < 0)
         {
-            audio.Play();
+            ///audio.Play();
             lifePoint -= damage;
             if (lifePoint <= 0)
             {
