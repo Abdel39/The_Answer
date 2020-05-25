@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class volumeManager : MonoBehaviour
 {
     public AudioSource audioSource;
-    private static float currentVolume=10.0f;
+    private static float currentVolume;
     public Slider slider;
     public bool IamSettingSlider=false;
     // Start is called before the first frame update
@@ -15,9 +15,15 @@ public class volumeManager : MonoBehaviour
     {
         if (IamSettingSlider && slider !=null)
         {
-            slider.value = audioSource.volume;
+            if (currentVolume == null)// c est la premiere fois
+            {
+                currentVolume = audioSource.volume;
+            }
+            slider.value = currentVolume;
+            
         }
 
+       
         audioSource.volume = currentVolume;
     }
 
