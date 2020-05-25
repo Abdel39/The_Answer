@@ -10,13 +10,15 @@ public class Enemy : MonoBehaviour
     public bool isinvulnerable = false;
     public CameraShake caméra;
     public bool launchVictoryIfKilled = false;
-   
+
+    AudioSource audio;
 
     public Transform hurtbox;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log(hp+name);
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class Enemy : MonoBehaviour
         if (hp <= 0)
         {
             IsAlive = false;
+            audio.Play();
         }
 
         
