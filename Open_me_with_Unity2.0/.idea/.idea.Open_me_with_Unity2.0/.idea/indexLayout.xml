@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelUserStore">
-    <attachedFolders />
+    <attachedFolders>
+      <Path>../../The_Answerrep</Path>
+    </attachedFolders>
     <explicitIncludes>
       <Path>Library/PackageCache/com.unity.ads@2.0.8</Path>
       <Path>Library/PackageCache/com.unity.analytics@3.2.2</Path>
@@ -15,8 +17,14 @@
     </explicitIncludes>
     <explicitExcludes>
       <Path>.idea</Path>
+      <Path>Installer</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>Lvl_Editor</Path>
+      <Path>MonoBleedingEdge</Path>
+      <Path>Open_me_with_Unity2.0</Path>
+      <Path>Temp</Path>
+      <Path>The Answer_Data</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>
