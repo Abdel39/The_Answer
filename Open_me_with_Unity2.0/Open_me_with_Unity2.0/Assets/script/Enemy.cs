@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         Debug.Log(hp+name);
-        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,7 +27,6 @@ public class Enemy : MonoBehaviour
             if (launchVictoryIfKilled)
             {
                SceneManager.LoadScene("victory");
-                
             }
         }
     }
@@ -52,7 +50,6 @@ public class Enemy : MonoBehaviour
         if (hp <= 0)
         {
             IsAlive = false;
-            audio.Play();
         }
 
         
