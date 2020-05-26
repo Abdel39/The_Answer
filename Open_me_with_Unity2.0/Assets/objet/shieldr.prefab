@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6392557532234184783}
   - component: {fileID: 6392557532234184769}
   - component: {fileID: 6392557532234184782}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shieldr
   m_TagString: Ennemies
   m_Icon: {fileID: 0}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6374515077676034787}
   - component: {fileID: 2438304827210432742}
   - component: {fileID: 1036755209813600821}
+  - component: {fileID: 252516136222245718}
   m_Layer: 8
   m_Name: feet
   m_TagString: Ennemies
@@ -133,7 +134,7 @@ CapsuleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.038980722, y: -0.47688133}
   m_Size: {x: 0.35709906, y: 0.65354455}
@@ -149,7 +150,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.090020895, y: -0.5488664}
   m_SpriteTilingProperty:
@@ -164,3 +165,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36837816, y: 0.5311501}
   m_EdgeRadius: 0
+--- !u!252 &252516136222245718
+SurfaceEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6373650704410482231}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 3639
+  m_Speed: 1
+  m_SpeedVariation: 0
+  m_ForceScale: 0.1
+  m_UseContactForce: 0
+  m_UseFriction: 1
+  m_UseBounce: 1

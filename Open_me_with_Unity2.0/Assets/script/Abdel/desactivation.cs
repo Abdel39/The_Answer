@@ -11,7 +11,6 @@ public class desactivation : MonoBehaviour
     void Start()
     {
         lifepoint = Enemy.hp;
-        shield = GameObject.Find("shield");
     }
 
     // Update is called once per frame

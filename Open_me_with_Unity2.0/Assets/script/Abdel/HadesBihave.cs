@@ -96,6 +96,7 @@ public class HadesBihave : MonoBehaviour
                     Stomp();
                     break;
                 case 8:
+                    Stomp();
                     Taurus();
                     break;
                 case 9:
