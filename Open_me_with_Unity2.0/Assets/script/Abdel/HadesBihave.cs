@@ -99,9 +99,7 @@ public class HadesBihave : MonoBehaviour
                     Taurus();
                     break;
                 case 9:
-                    Stomp();
-                    Enemy.hp = 1;
-                    Spawner();
+                    Enemy.IsAlive = false;
                     break;
             }
 
@@ -109,6 +107,10 @@ public class HadesBihave : MonoBehaviour
             if (clock == 0)
             {
                 Pswitch();
+                if (phase > 6)
+                {
+                    Heart();
+                }
             }
 
             clock--;
@@ -165,10 +167,8 @@ public class HadesBihave : MonoBehaviour
 
     private void Stomp()
     {
-        Debug.Log("neer");
         if (clock2 <= 0)
         {
-            Debug.Log("yee");
             clock2 = 500;
             Destroy(feet2);
             feet2 = Instantiate(feet);
@@ -177,12 +177,10 @@ public class HadesBihave : MonoBehaviour
         else if (clock2 < 100)
         {
             feeeet.gravityScale = 25;
-            Debug.Log("yeet");
         }
         else
         {
             feeeet.velocity = new Vector2((player.position.x - feeeet.position.x), 0);
-            Debug.Log("yeep");
         }
         
     }
