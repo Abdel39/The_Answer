@@ -33,7 +33,7 @@ public class phantomscript_boss : MonoBehaviour
     {
         if (hp <= 0)
         {
-            Destroy(GameObject.Find(this.name));
+            Destroy(gameObject);
         }
 
         velocity = Vector2.zero;
