@@ -25475,10 +25475,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6128751758586232925, guid: 63fcff6a6c1212047aca54ddc0724b42,
         type: 3}
+    - target: {fileID: 4880748177721522805, guid: e9d1f802c557a304cb155573bd4e0eb2,
+        type: 3}
+      propertyPath: lifePoint
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880748177721522807, guid: e9d1f802c557a304cb155573bd4e0eb2,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.27
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4880748177721522808, guid: e9d1f802c557a304cb155573bd4e0eb2,
         type: 3}
