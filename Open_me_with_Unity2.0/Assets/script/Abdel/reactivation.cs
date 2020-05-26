@@ -19,7 +19,8 @@ public class reactivation : MonoBehaviour
         if (lifepoint != Enemy.hp)
         {
             lifepoint = Enemy.hp;
-            Desactivation.shield=Instantiate(shield,transform);
+            GameObject i=Instantiate(shield,transform);
+            Desactivation.shield = i;
         }
     }
 }

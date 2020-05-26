@@ -8,9 +8,8 @@ using Random = UnityEngine.Random;
 public class HadesBihave : MonoBehaviour
 {
     public Enemy Enemy;
-    public GameObject pball;
     public GameObject hand;
-    public GameObject poseinstance;
+    private GameObject poseinstance;
     public GameObject poseidon;
     public GameObject tomb_stone;
     public GameObject Ghost;
@@ -22,7 +21,7 @@ public class HadesBihave : MonoBehaviour
     public int phase;
     public int clockmax;
     private int clock;
-    private GameObject ActualP;
+    public GameObject ActualP;
     private int clock2;
     public Rigidbody2D rb;
     public Rigidbody2D player;
@@ -35,6 +34,8 @@ public class HadesBihave : MonoBehaviour
         lifepoint = Enemy.hp;
         clock = clockmax*3;
     }
+
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -164,8 +165,10 @@ public class HadesBihave : MonoBehaviour
 
     private void Stomp()
     {
-        if (clock2 == 0)
+        Debug.Log("neer");
+        if (clock2 <= 0)
         {
+            Debug.Log("yee");
             clock2 = 500;
             Destroy(feet2);
             feet2 = Instantiate(feet);
@@ -174,23 +177,25 @@ public class HadesBihave : MonoBehaviour
         else if (clock2 < 100)
         {
             feeeet.gravityScale = 25;
+            Debug.Log("yeet");
         }
         else
         {
             feeeet.velocity = new Vector2((player.position.x - feeeet.position.x), 0);
+            Debug.Log("yeep");
         }
         
     }
 
     private void Pswitch()
     {
-        Destroy(ActualP);
         Vector3 vect= new Vector2(Random.Range(31,65),Random.Range(-10,2.5f));
-        while (Math.Abs(vect.x-player.position.x)<1)
+        while (Math.Abs(vect.x-player.position.x)<5)
         {
             vect.x= Random.Range(31,65);
         }
-        ActualP = Instantiate(pball, vect,Quaternion.identity);
+
+        ActualP.transform.position = vect;
         clock = clockmax;
     }
     

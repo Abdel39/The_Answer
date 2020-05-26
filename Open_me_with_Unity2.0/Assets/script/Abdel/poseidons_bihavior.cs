@@ -27,6 +27,7 @@ public class poseidons_bihavior : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("player").transform;
         pm = player.GetComponent<playermoves>();
+        prb = player.GetComponent<Rigidbody2D>();
         rb=GetComponent<Rigidbody2D>();
         cooldown = cool;
     }
@@ -39,7 +40,7 @@ public class poseidons_bihavior : MonoBehaviour
             pm.TakeDamage(1);
             Debug.Log("nono");
             prb.AddForce(Vector2.up*200);
-            prb.AddForce(Vector2.right*10000);
+            prb.AddForce(Vector2.right*200);
         }
     }
 
