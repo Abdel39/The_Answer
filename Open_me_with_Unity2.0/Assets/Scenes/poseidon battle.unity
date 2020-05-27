@@ -23003,7 +23003,7 @@ MonoBehaviour:
   IsAlive: 1
   isinvulnerable: 1
   "cam\xE9ra": {fileID: 734637012}
-  launchVictoryIfKilled: 0
+  launchVictoryIfKilled: 1
   hurtbox: {fileID: 0}
 --- !u!114 &798295659
 MonoBehaviour:
@@ -25463,7 +25463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535554374}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.378782, y: 3.4087815, z: 25.342958}
+  m_LocalPosition: {x: 2.3787823, y: 3.4087815, z: 25.342958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 471076708}
@@ -25581,7 +25581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537584525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1399996, y: -0.080725655, z: -10.157042}
+  m_LocalPosition: {x: -3.1399994, y: -0.080725655, z: -10.157042}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 586177159}

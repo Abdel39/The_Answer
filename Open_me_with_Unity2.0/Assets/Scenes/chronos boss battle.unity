@@ -624,7 +624,7 @@ MonoBehaviour:
   IsAlive: 1
   isinvulnerable: 1
   "cam\xE9ra": {fileID: 286622533}
-  launchVictoryIfKilled: 0
+  launchVictoryIfKilled: 1
   hurtbox: {fileID: 0}
 --- !u!1 &263736415
 GameObject:
